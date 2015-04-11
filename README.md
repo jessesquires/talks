@@ -1,5 +1,5 @@
 # talks
 
-*Talks and presentations that I've given*
+*A list of talks that I've given*
 
 > TODO:
