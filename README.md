@@ -4,5 +4,6 @@
 
 
 ##### 14 April 2015
-> #### *Using Core Data in Swift*
+> _**Using Core Data in Swift**_
+>
 > [Swift Language User Group](http://www.meetup.com/swift-language) (SLUG) meetup @ [Realm](http://realm.io)
