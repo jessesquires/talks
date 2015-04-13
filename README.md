@@ -5,4 +5,4 @@
 ##### 14 April 2015
 > _**Using Core Data in Swift**_
 >
-> [Swift Language User Group](http://www.meetup.com/swift-language) (SLUG) meetup @ [Realm](http://realm.io)
+> San Francisco, [Swift Language User Group](http://www.meetup.com/swift-language) (SLUG) meetup, hosted by [Realm](http://realm.io)
