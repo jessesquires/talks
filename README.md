@@ -2,7 +2,6 @@
 
 *A list of talks that I've given*
 
-
 ##### 14 April 2015
 > _**Using Core Data in Swift**_
 >
