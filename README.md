@@ -2,11 +2,11 @@
 
 *A list of talks that I've given*
 
-| Date          | Title                               | Event                         | Location                          | Video         |
-|:--------------|:------------------------------------|:------------------------------|:----------------------------------|:--------------|
-| 14 Apr 2015   | [Using Core Data in Swift][slides1] | [Swift meetup][event1] (SLUG) | [Realm][location1], San Francisco |[Video][video1]|
+| Date          | Title                       | Event                         | Location                          | Links                             |
+|:--------------|:----------------------------|:------------------------------|:----------------------------------|:----------------------------------|
+| 14 Apr 2015   | Using Core Data in Swift    | [Swift meetup][event1] (SLUG) | [Realm][location1], San Francisco | [slides][slides1], [video][video1]|
 
-## About
+## about
 
 All presentations are created using [Deckset](http://www.decksetapp.com), and uploaded to [Speaker Deck](https://speakerdeck.com/jessesquires). 
 
