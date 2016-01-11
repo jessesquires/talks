@@ -44,7 +44,7 @@ However, it is *not* a relational *database* or RDBMS.
 
 # [fit] Not a database?
 
-![right](img/jackie.jpg)
+![right](../../img/jackie.jpg)
 
 ---
 
@@ -70,10 +70,10 @@ However, it is *not* a relational *database* or RDBMS.
 
 # [fit] Core Data Stack:
 
-*Managed objects* 
+*Managed objects*
 `NSMangedObject`
 
-*Managed object context* 
+*Managed object context*
 `NSManagedObjectContext`
 
 *Persistent Store Coordinator*
@@ -123,7 +123,7 @@ However, it is *not* a relational *database* or RDBMS.
 # [fit] *Why use Swift?*
 
 * Clarity
-* Type-safety 
+* Type-safety
 * Swift-only features
 * Functional paradigms
 
@@ -152,7 +152,7 @@ However, it is *not* a relational *database* or RDBMS.
 `Editor functionality`
 `temporarily limited.`
 
-![inline fit](img/rage.png)
+![inline fit](../../img/rage.png)
 
 ^Unstable tools, but improving
 
@@ -166,7 +166,7 @@ However, it is *not* a relational *database* or RDBMS.
 
 ---
 
-# [fit] Standing up the 
+# [fit] Standing up the
 # [fit] Core Data Stack
 
 *Same boilerplate code as Objective-C*
@@ -205,12 +205,12 @@ struct CoreDataModel {
 
 ````swift
 class CoreDataStack {
-   
+
    let model: CoreDataModel
-   
+
    let managedObjectContext: NSManagedObjectContext
-   
-   let persistentStoreCoordinator: NSPersistentStoreCoordinator 
+
+   let persistentStoreCoordinator: NSPersistentStoreCoordinator
 
    init(model: CoreDataModel,
         storeType: String,
@@ -233,8 +233,8 @@ class CoreDataStack {
 ````swift
 let model = CoreDataModel(name: "MyModel", bundle: myBundle)
 
-let stack = CoreDataStack(model: model, 
-                          storeType: NSSQLiteStoreType, 
+let stack = CoreDataStack(model: model,
+                          storeType: NSSQLiteStoreType,
                           concurrencyType: .MainQueueConcurrencyType)
 
 // Use context
@@ -249,11 +249,11 @@ stack.managedObjectContext
 
 *`AppDelegate.m`*
 
-![inline](img/wat.png)
+![inline](../../img/wat.png)
 
 # Do not
 
-^Do not use Xcode template! 
+^Do not use Xcode template!
 
 ^Do not setup stack in AppDelegate!
 
@@ -283,7 +283,7 @@ stack.managedObjectContext
 * *mogenerator Swift support still experimental*
 (Last release Sept 2014)
 
-![inline fit](img/cry.png)
+![inline fit](../../img/cry.png)
 
 ^Next step
 
@@ -380,7 +380,7 @@ Xcode will generate *String* instead of *String?*
 
 ^Runtime crash - if not marked optional
 
---- 
+---
 
 # [fit] Creating Managed Objects
 # [fit] *Prefixed Subclasses*
@@ -400,11 +400,11 @@ Must add prefix manually *after* generating classes
 
 No prefix means runtime *crash*, obscure errors
 
-![inline](img/nogusta.png)
+![inline](../../img/nogusta.png)
 
 ---
 
-# [fit] Instantiating 
+# [fit] Instantiating
 # [fit] Managed Objects
 
 *Reduce boilerplate, generalize*
@@ -424,7 +424,7 @@ No prefix means runtime *crash*, obscure errors
 
 ````objectivec
 // "Person"
-NSString *name = [Person entityName]; 
+NSString *name = [Person entityName];
 
 
 @implementation NSManagedObject (Helpers)
@@ -469,7 +469,7 @@ Person *person = [Person insertNewObjectInContext:context];
 
 ````swift
 // "MyApp.Person"
-let fullName = NSStringFromClass(object_getClass(self)) 
+let fullName = NSStringFromClass(object_getClass(self))
 
 extension NSManagedObject {
 
@@ -481,7 +481,7 @@ extension NSManagedObject {
 }
 
 // "Person"
-let entityName = Person.entityName() 
+let entityName = Person.entityName()
 ````
 
 ^Namespaces
@@ -503,10 +503,10 @@ extension NSManagedObject {
     convenience init(context: NSManagedObjectContext) {
          let name = self.dynamicType.entityName()
 
-         let entity = NSEntityDescription.entityForName(name, 
+         let entity = NSEntityDescription.entityForName(name,
                            inManagedObjectContext: context)!
 
-         self.init(entity: entity, 
+         self.init(entity: entity,
                    insertIntoManagedObjectContext: context)
     }
 }
@@ -528,10 +528,10 @@ class Employee: NSManagedObject {
 
    init(context: NSManagedObjectContext) {
 
-      let entity = NSEntityDescription.entityForName("Employee", 
+      let entity = NSEntityDescription.entityForName("Employee",
                               inManagedObjectContext: context)!
 
-      super.init(entity: entity, 
+      super.init(entity: entity,
                  insertIntoManagedObjectContext: context)
    }
 }
@@ -556,8 +556,8 @@ class Employee: NSManagedObject {
 
 ---
 
-# [fit] The *Objective-C* way 
-# [fit] is not always 
+# [fit] The *Objective-C* way
+# [fit] is not always
 # [fit] the *Swift* way
 
 ^Why use Swift if we aren't embracing it?
@@ -625,14 +625,14 @@ class Employee: NSManagedObject {
         email: String? = nil,
         address: String? = nil) {
 
-         // init 
+         // init
       }
 }
 ````
 
 ^True designated init
 
-^Can ONLY be initialized with this init 
+^Can ONLY be initialized with this init
 
 ^Dependency injection
 
@@ -690,7 +690,7 @@ let id: EmployeeId = "12345"
 
 # `Set<T>`
 
-![fit inline](img/yuno.png)
+![fit inline](../../img/yuno.png)
 
 Nope
 
@@ -776,13 +776,13 @@ band.genre = .BlackMetal
 let fetch = NSFetchRequest(entityName: "Band")
 fetch.predicate = NSPredicate(format: "genreValue == %@", genre)
 ````
-![inline 100%](img/why.png)
+![inline 100%](../../img/why.png)
 
 ^Really feeling the baggage of ObjC
 
 ---
 
-# [fit] Functional 
+# [fit] Functional
 # [fit] Paradigms
 
 ### *With micro-libraries*
@@ -842,7 +842,7 @@ if results == nil {
 
 ^Again, method on context
 
-^We want: 
+^We want:
 
 ^type-safety (not AnyObject)
 
@@ -876,7 +876,7 @@ class FetchRequest <T: NSManagedObject>: NSFetchRequest {
 ````swift
 typealias FetchResult = (success: Bool, objects: [T], error: NSError?)
 
-func fetch <T> (request: FetchRequest<T>, 
+func fetch <T> (request: FetchRequest<T>,
                 context: NSManagedObjectContext) -> FetchResult
 ````
 
@@ -893,7 +893,7 @@ func fetch <T> (request: FetchRequest<T>,
 ````swift
 typealias FetchResult = (success: Bool, objects: [T], error: NSError?)
 
-func fetch <T>(request: FetchRequest<T>, 
+func fetch <T>(request: FetchRequest<T>,
                context: NSManagedObjectContext) -> FetchResult {
 
     var error: NSError?
@@ -938,13 +938,13 @@ results.objects // [Band]
 
 # [fit] Slightly less terrible?
 
-![fit inline](img/yey.png)
+![fit inline](../../img/yey.png)
 
 ^Is this better?
 
 ^If we want to embrace "Swiftness", then yes
 
-^Want ObjC dynamicism, then no. 
+^Want ObjC dynamicism, then no.
 
 ^Breaks libraries like Mantle.
 
@@ -994,7 +994,7 @@ github.com/jessesquires/JSQCoreDataKit
 
 # **_Thank you!_**
 
-![left fit](img/freddie.png)
+![left fit](../../img/freddie.png)
 
 ---
 
