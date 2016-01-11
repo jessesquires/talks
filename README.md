@@ -2,10 +2,10 @@
 
 *A list of talks that I've given*
 
-| Date          | Title                            | Event                         | Location                          | Links                             |
-|:--------------|:---------------------------------|:------------------------------|:----------------------------------|:----------------------------------|
-| 14 Apr 2015   | Using Core Data in Swift         | [Swift meetup][event1] (SLUG) | [Realm][location1], San Francisco | [slides][slides1], [video][video1]|
-| 28 Jan 2016   | Swift view controller presenters | [Swift meetup][event2] (SLUG) | [Realm][location2], San Francisco | [slides][slides2], [video][video2]|
+| Date          | Title                             | Event                         | Location                          | Links                             |
+|:--------------|:----------------------------------|:------------------------------|:----------------------------------|:----------------------------------|
+| 14 Apr 2015   | Using Core Data in Swift          | [Swift meetup][event1] (SLUG) | [Realm][location1], San Francisco | [slides][slides1], [video][video1]|
+| 28 Jan 2016   | Swifty view controller presenters | [Swift meetup][event2] (SLUG) | [Realm][location2], San Francisco | [slides][slides2], [video][video2]|
 
 ## about
 
