@@ -19,12 +19,14 @@ The original markdown for slides, speaker notes, and resources are included in t
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 
+<!-- Links -->
+
 [slides1]:https://speakerdeck.com/jessesquires/using-core-data-in-swift
 [event1]:https://www.meetup.com/swift-language/events/220612410/
 [location1]:https://realm.io
 [video1]:https://realm.io/news/jesse-squires-core-data-swift
 
-[slides2]:https://speakerdeck.com/jessesquires/
+[slides2]:https://speakerdeck.com/jessesquires/swifty-view-controller-presenters
 [event2]:https://www.meetup.com/swift-language/events/227833264/
 [location2]:https://realm.io
 [video2]:https://realm.io/news
