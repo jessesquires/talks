@@ -1,9 +1,11 @@
 
 # [fit] Swifty view controller presenters
 
-### *Jesse Squires*
+# *Jesse Squires*
 
-#### *jessesquires.com* • *@jesse_squires* • *github/jessesquires*
+### *jessesquires.com* • *@jesse_squires* • *github/jessesquires*
+
+@swiftlybrief
 
 ^Thanks for coming, thanks Realm
 We give our titles and abstracts in advance
@@ -27,6 +29,8 @@ is a presentation controller
 # [fit] *Presentation controllers*
 <br /><br /><br /><br /><br/>
 # [fit] *Everywhere*
+
+^This is what we are diving into today
 
 ---
 
@@ -80,7 +84,6 @@ Slightly coupled in this way, but otherwise nicely decoupled.
 ^Presentation involves transitioning
 Each time we display a view controller
 both transition and presentation are involved
-Must have both
 
 ---
 
@@ -125,7 +128,7 @@ Size classes and iPhone 6/6+
 # Responsibilities
 
  - Positioning
- - "Chrome"
+ - Content and "Chrome"
  - Adaption
  - Animation
 
@@ -145,6 +148,9 @@ Other than the delegate vends the controller
 <br/>
 
 **Transitioning*
+
+^Again, see how terms are interrelated
+transitioning + presenting
 
 ---
 
@@ -188,6 +194,8 @@ Also, UIModalTransitionStyle
 
 ![](../../img/magic.gif)
 
+^Behind the scenes, UIKit is vending presentation controllers
+
 ---
 
 # Presenting
@@ -225,8 +233,8 @@ Unified, consistent APIs.
 All view controllers with custom presentation controllers.
 
 ^UIAlertController replaced UIAlertView and UIActionSheet
-UIPopoverPresentationController replaced UIPopoverController
 UISearchController replaced UISearchDisplayController
+UIPopoverPresentationController replaced UIPopoverController
 
 ---
 
@@ -259,7 +267,7 @@ _UIAlertControllerActionSheetRegularPresentationController
 ```
 
 ---
-# *Summary: API "entry points"*
+# *API Summary*
 
 - 4 methods to display a view controller
 - Set styles via an enum value
@@ -285,7 +293,7 @@ and UIKit will throw exception
 ---
 
 # [fit] How to use
-## custom presentation controllers
+## *custom* presentation controllers
 
 ---
 
@@ -326,6 +334,21 @@ func adaptivePresentationStyle() -> UIModalPresentationStyle
 func shouldPresentInFullscreen() -> Bool
 
 func containerViewWillLayoutSubviews()
+```
+
+---
+
+## 2. Vend controller
+
+`UIViewControllerTransitioningDelegate`
+
+*Presenting* view controller conforms to delegate
+
+Set this delegate on the *Presented* view controller
+
+```swift
+let vc = MyViewController()
+vc.transitioningDelegate = self
 ```
 
 ---
@@ -419,6 +442,8 @@ presentViewController(vc, type: .Popover(config))
 
 let type = .Modal(.WithNavigation, .FullScreen, .CoverVertical)
 presentViewController(vc, type: type)
+
+presentViewController(vc, type: .Custom(self))
 ```
 
 ---
@@ -439,6 +464,9 @@ presentViewController(vc, type: type)
 - pspdfkit.com/blog/2015/presentation-controllers/
 - petersteinberger.com/blog/2015/uipresentationcontroller-popover-detection/
 
+^Blog posts about shortcomings
+API not perfect, but still better than before
+
 ---
 
 # **_Thank you!_**
@@ -447,4 +475,3 @@ presentViewController(vc, type: type)
 
 # Questions?
 ### [fit] *jessesquires.com* • *@jesse_squires* • *github/jessesquires*
-
