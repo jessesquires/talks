@@ -7,9 +7,10 @@
 
 @swiftlybrief
 
-^Thanks for coming, thanks Realm
-We give our titles and abstracts in advance
-This talk evolved a lot as I wrote it
+^Presentation Controller API
+^Examples
+^Demo
+^Wrap it in Swift
 
 ---
 
@@ -216,6 +217,8 @@ func dismissViewControllerAnimated(_, completion:)
 func popViewControllerAnimated(_ animated:) -> UIViewController?
 ```
 
+^Lop-sided API
+
 ---
 
 # __*Special*__
@@ -335,6 +338,9 @@ func shouldPresentInFullscreen() -> Bool
 
 func containerViewWillLayoutSubviews()
 ```
+
+^API is deficient / limited, why return style?
+Should be able to return controller
 
 ---
 
