@@ -1,4 +1,4 @@
-# talks
+# Talks
 
 *A list of talks that I've given*
 
@@ -7,13 +7,17 @@
 | 14 Apr 2015   | Using Core Data in Swift          | [Swift meetup][event1] (SLUG) | [Realm][location1], San Francisco | [slides][slides1], [video][video1]|
 | 28 Jan 2016   | Swifty view controller presenters | [Swift meetup][event2] (SLUG) | [Realm][location2], San Francisco | [slides][slides2]|
 
-## about
+# Upcoming
+
+I'll be speaking at the [__*try! Swift*__](http://www.tryswiftconf.com/en) conference in Tokyo, Japan in March 2016.
+
+## About
 
 All presentations are created using [Deckset](http://www.decksetapp.com), and uploaded to [Speaker Deck](https://speakerdeck.com/jessesquires). 
 
 The original markdown for slides, speaker notes, and resources are included in this repo.
 
-## license
+## License
 
 >**Copyright &copy; 2015-present Jesse Squires**
 
