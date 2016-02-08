@@ -122,7 +122,7 @@ Size classes and iPhone 6/6+
 ---
 
 # [fit] *understanding*
-# [fit] The Presntation API
+# [fit] The Presentation API
 
 ---
 
