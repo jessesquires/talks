@@ -1,0 +1,305 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf340
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww14760\viewh16500\viewkind1
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b\fs36 \cf0 \ul \ulc0 try! Swift transcript
+\b0\fs24 \ulnone \
+
+\i\fs26 Jesse Squires
+\i0\fs24 \
+\
+
+\i\b Abstract
+\i0\b0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\i \cf0 Do you want to contribute to Swift? Not sure how or where to begin? It can be overwhelming! In this talk we'll explore the different parts of Swift, see how the various Swift projects are related, discuss the skills you need to get started, and learn the best ways to get your first fix accepted.
+\i0 \
+\
+25 min\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\b \cf0 \ul Slide 1
+\b0 \ulnone \
+Thanks everyone for coming! Today, we're talking about contributing to open source Swift. There are a lot of different aspects to Swift, and it can be overwhelming. Hopefully, it will feel more approachable after this talk, and you\'92ll leave feeling inspired. \
+\
+
+\b \ul Slide 2 - In this talk
+\b0 \ulnone \
+Here's a brief outline of what we'll cover. [Read through outline]\
+\
+
+\b \ul Slide 3, 4 - Where do you start?
+\b0 \ulnone \
+That's a lot of different projects! Where do we begin?\
+\
+
+\b \ul Slide 5 - How does it work together?
+\b0 \ulnone \
+We need to find out how it all works together. Having the bigger picture in mind can really help situate you within the project as a whole, and the area that you are contributing too.\
+\
+
+\b \ul Slide 6 - What happens when you compile?
+\b0 \ulnone \
+However, in order to answer "how does it all work together?", we'll need to answer another question first. A more fundamental question.\
+What happens when you compile your Swift code?\
+\
+
+\b \ul Slide 7 - LLVM overview
+\b0 \ulnone \
+As you (probably) know, Swift is built on top of the LLVM compiler infrastructure. In short, LLVM is a collection of libraries that together form a modern compiler architecture. There are multiple phases to get from "writing code" to "a native, executable binary":\
+\
+\'97 We begin with the 
+\i front-end
+\i0  to the compiler. This is responsible for parsing source code and producing 
+\i LLVM IR
+\i0 .\
+\'97 IR stands for 
+\i intermediate representation
+\i0  and is LLVM's way to represent code in the compiler.\
+\'97 From there, LLVM performs various analysis and optimization passes on the IR to improve the code.\
+\'97 This optimized IR is then sent to a 
+\i back-end
+\i0 . The back-end component is responsible for generating code by taking the IR as input and producing native machine code as output.\
+\'97 The final result is a binary for the architecture/instruction set specified by the back-end.\
+\
+
+\b \ul Slide 8 - Clang pipeline\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\b0 \cf0 \ulnone The Clang pipeline - or, before we had Swift!\
+Before Swift, there was 
+\i Clang
+\i0 . Clang is a C/C++/Obj-C 
+\i front-end
+\i0  for LLVM. It has the following steps:\
+\
+1. The parser parses source code (C/C++/Obj-C)\
+2. This produces an 
+\i Abstract Syntax Tree
+\i0  (AST), which is a tree representation of your code.\
+3. The AST goes through semantic analysis to produce a transformed AST*.\
+4. The AST* can then go through further analysis (not going into detail here).\
+5. The AST is then sent through the code generation stage to generate LLVM IR.\
+6. After that, the IR is handed off to LLVM to complete the process.\
+\
+Clang is obviously older, and has some legacy architectural issues. \
+\'97 As you can see, the pipeline has this odd analysis branch\
+\'97 Parsing and semantic analysis are intertwined \
+\'97 Duplication between CFG, and CodeGen \
+\'97 Can\'92t generate code from CFG\
+\
+While it\'92s a great tool, it isn\'92t the cleanest. Swift was designed to complement LLVM, and incorporate "lessons learned" from Clang.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\b \cf0 \ul Slide 9 - Swift pipeline 
+\b0 \ulnone \
+Now let\'92s dive into the Swift 
+\i front-end
+\i0  for LLVM. The process is similar to Clang, but more refined. \
+\
+1. The parser parses Swift code. It is responsible for generating an AST, and emitting warnings/errors for grammatical problems in the source code.\
+2. The AST then goes through semantic analysis. The semi is responsible for taking the parsed AST and transforming it into a well-formed, fully-type-checked form \'97 AST*. It emits warnings/errors for semantic problems in the source code.\
+3. The ClangImporter imports Clang modules and maps the C/Obj-C APIs to their Swift APIs. The resulting ASTs can be referred to by semantic analysis.\
+4. The AST* is then handed off to 
+\i SILGen, 
+\i0 the 
+\i Swift Intermediate Language
+\i0  generator. This phase lowers the AST* into 
+\i raw SIL
+\i0 .\
+5. Next, the 
+\i SIL
+\i0  goes through guaranteed transformations, analysis, and optimizations. This includes dataflow diagnostics, Swift-specific optimizations, ARC optimizations, devirtualization (polymorphic to direct calls), generic specialization. This produces 
+\i canonical SIL
+\i0 .\
+6. Finally, we can generate 
+\i LLVM IR
+\i0 . The 
+\i SIL*
+\i0  gets handed off to the 
+\i IRGen
+\i0  phase which lowers 
+\i SIL*
+\i0  to 
+\i LLVM IR
+\i0 . The IR is then passed to LVVM to complete the process.\
+\
+
+\b \ul Slide 10 - Mind blown cats
+\b0 \ulnone \
+Whew! That\'92s a lot! If you feel like these cats \'97 that\'92s ok. In fact, that\'92s good! Compilers are a challenging area of Computer Science. There are a lot of deep, complicated topics in formal languages, theory of computation, and compilers.\
+\
+But don\'92t worry, you don\'92t need to be an expert in all of this. However, I think it\'92s really valuable and helpful to understand this at a high level.\
+\
+
+\b \ul Slide 11, 12, 13 - Example
+\b0 \ulnone \
+This stuff is pretty abstract, so let's try to make it more concrete by looking at a small example. \
+Here's a simple hello world program in swift. \
+We can compile and run it.\
+\
+
+\b \ul Slide 14, 15 - AST
+\b0 \ulnone \
+Using 
+\i swiftc
+\i0 , we can produce and look at the 
+\i AST
+\i0 .\
+We aren't going to examine this.\
+This is mostly to show, "hey, here's what this looks like".\
+\
+
+\b \ul Slide 16, 17 - SIL
+\b0 \ulnone \
+We can also emit SIL for this program. (In this command, we also demangle it.)\
+Again, not looking at this deeply \'97 merely showing what this looks like.\
+\
+
+\b \ul Slide 18, 19 - IR and ASM
+\b0 \ulnone \
+And finally, we can even emit 
+\i LLVM IR
+\i0  and assembly!\
+The output for each of these is waaaay to big for a slide. They are similar to SIL but way more verbose.\
+\
+
+\b \ul Slide 20 - WAT
+\b0 \ulnone \
+You might be thinking, what is all of this!? It's dense and it can be confusing.\
+But, I think understanding this pipeline at a high level is beneficial to your overall understanding.\
+Again, don't worry, you do not need expert knowledge in every aspect of Swift to contribute \'97 as we\'92ll see next.\
+\
+
+\b \ul Slide 21 - Repos and Projects
+\b0 \ulnone \
+Now we\'92re going to dive into each of the projects and repositories to how they fit into the overall pipeline. Along the way, we\'92ll see what skills you need to contribute to each part and the relative difficulty of getting started in each area.\
+\
+
+\b \ul Slide 22, 23 - Project mapping\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\b0 \cf0 \ulnone Back to the Swift pipeline.
+\b \ul  
+\b0 \ulnone Here\'92s roughly how all the parts of Swift and the other projects map into the Swift pipeline. The main swift repo basically contains a directory for each phase of the pipeline. \
+\
+The stdlib, corelibs, and SPM are all at the beginning of the pipeline. This should be pretty intuitive, as these are all libraries and frameworks.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\b \cf0 \ul Slide 24 - Swift core\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sl283\slmult1\partightenfactor0
+
+\b0 \cf0 \expnd0\expndtw0\kerning0
+\ulnone Compiler: includes everything from the Swift pipeline! \
+It\'92s hard because this requires compiler knowledge.\
+\
+Stdlib: the standard library, of course! \
+Medium because this is more advanced Swift. It has access to LLVM Builtins. You must be cautious of performance.\
+\
+SourceKit: the framework we all know and love, which powers Xcode\'92s syntax highlighting. It\'92s hard because it also requires compiler knowledge.\kerning1\expnd0\expndtw0 \
+\
+
+\b \ul Slide 25 - Infra\
+
+\b0 \ulnone I\'92m going to refer to these projects as "Swift infrastructure". We won\'92t talk much about these projects. They are clones from the LLVM projects with Swift-specific changes.
+\b \ul \
+
+\b0 \ulnone These projects are governed by LLVM developer policies, licensing, coding standards.\
+These are very hard because they require the deepest compiler, Clang, and LLVM knowledge. Note that non-Swift-specific changes should be upstreamed to LLVM.\
+\
+
+\b \ul Slide 26 - SPM\
+
+\b0 \ulnone The next group of projects is the Swift Package Manager and the low-level build system that it uses. \
+SPM is all Swift, but wraps a lot of C libraries, so difficulty is medium.\
+llbuild is a set of libraries for building build systems. This is a more challenging area and all in C++.\
+\
+
+\b \ul Slide 27 - Core Libs\
+
+\b0 \ulnone The 3 frameworks that we all know and love from Obj-C \'97 now in Swift.\
+\
+Foundation and XCTest are easy to get started with, relatively speaking, since you are most likely familiar with the APIs from Obj-C and what they are supposed to do. \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+lib-dispatch is hard not only because this is low-level C code, but concurrency is inherently difficult. \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sl283\slmult1\partightenfactor0
+\cf0 Overall, there is a lot of inter-op with C and bridging with Obj-C. These areas can be more challenging.\ul \
+\
+\ulnone One final note: in all the projects, there\'92s a lot of scripting to automate tedious tasks. Most of these are in python.\ul \
+\
+
+\b Slide 28 - Evolution
+\b0 \ulnone \
+And finally, we have Swift evolution, which \expnd0\expndtw0\kerning0
+defines a formal process for fundamental changes to Swift, tracks changes, and manages development and releases.\
+Proposals should be thoughtful, detailed, provide tangible benefits, and should first be vetted on mailing lists!\kerning1\expnd0\expndtw0 \ul \
+\
+
+\b Slide 29, 30 - Contributing.md\
+
+\b0 \ulnone Be sure to read and follow the guidelines! It makes the experience better for everyone.\
+I won\'92t reproduce the contributing guidelines here, because you can find them online. As an open source author, I can tell you it is frustrating when guidelines are not followed. \
+\
+
+\b \ul Slide 31 - Tips
+\b0 \ulnone \
+In your interactions on pull requests, the bug tracker, and mailing lists be kind and respectful. This should be the #1 priority! We must have a positive, collaborative, and above all, inclusive environment.\
+\
+For proposals, be thoughtful and thorough. Don\'92t say "I think feature X in language Y is cool. So Swift should do this too." Explain how and why your proposal benefits the language and community.\
+\
+No brainer \'97 follow best practices: clean code, include tests.\
+\
+If your proposal or pull request gets rejected, don\'92t give up! In particular, do not take this personally. This doesn\'92t mean you, your code, or your ideas suck! It means that they weren\'92t the right direction for Swift, or there\'92s an alternative that\'92s better. \
+\
+Trust the project leads to guide the project in the right direction. And remember, that no one is an expert in everything.
+\b \ul \
+\
+Slide 32 - Awesome Contributors\
+
+\b0 \expnd0\expndtw0\kerning0
+\ulnone Every contribution really does matter.\
+\kerning1\expnd0\expndtw0 Participate on the mailing list discussions. Opinions matter from every level.\expnd0\expndtw0\kerning0
+\
+Don\'92t be afraid to ask for help!\
+Find an area you are passionate about and do it!\
+Here are some awesome contributors from the community.\
+Great examples to follow.\
+
+\b \kerning1\expnd0\expndtw0 \ul \
+Slide 33 - Contribute, Lattner\
+
+\b0 \ulnone Every contribution matters and helps Swift get better. \
+
+\b \ul \
+
+\b0 \ulnone All contributions matter. I can\'92t stress this enough! For example, no one can be successful in using Swift (especially beginners) if there\'92s no documentation \'97 helping with docs can have a huge impact, even though it might not seem like it.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sl283\slmult1\partightenfactor0
+\cf0 \ul \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\sl283\slmult1\partightenfactor0
+
+\b \cf0 Slide 34 - Why contribute?\
+
+\b0 \ulnone Swift is the beginning of the next generation of Mac and iOS development. Maybe the next generation of Linux and server-side development?\
+\
+The only way for Swift to be successful is if everyone participates!\
+Swift will be whatever we want it to be, within reason. :) \
+\
+Apple has given us a rare opportunity.\
+Swift\'92s success is our success. If we improve our tools, we improve our apps. As Swift gets better and faster, our apps get better and faster.\
+
+\b \ul \
+Slide 34, 35, 36, 37 - Closing\
+
+\b0 \ulnone [Read through slides]\ul \
+\ulnone Don\'92t be shy. Don\'92t be afraid to try! \
+Contribute today!\
+Thanks for listening!\
+}
