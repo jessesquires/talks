@@ -4,24 +4,25 @@
 
 | Date          | Title                             | Event                         | Location                          | Links                             |
 |:--------------|:----------------------------------|:------------------------------|:----------------------------------|:----------------------------------|
-| 14 Apr 2015   | Using Core Data in Swift          | [Swift meetup][event1] (SLUG) | [Realm][location1], San Francisco | [slides][slides1], [video][video1]|
-| 28 Jan 2016   | Swifty view controller presenters | [Swift meetup][event2] (SLUG) | [Realm][location2], San Francisco | [slides][slides2]|
+| 14 Apr 2015   | Using Core Data in Swift          | [Swift meetup][event1] (SLUG)   | [Realm][location1], San Francisco | [slides][slides1], [video][video1]|
+| 28 Jan 2016   | Swifty view controller presenters | [Swift meetup][event2] (SLUG)   | [Realm][location2], San Francisco | [slides][slides2], [video][video2]|
+| 04 Mar 2016   | Contributing to open source Swift | [try! Swift conference][event3] | [Tokyo][location3], Japan :jp: | [slides][slides3] |
 
 # Upcoming
 
-I'll be speaking at the [__*try! Swift*__](http://www.tryswiftconf.com/en) conference in Tokyo, Japan in March 2016.
+> TBA
 
 ## About
 
-All presentations are created using [Deckset](http://www.decksetapp.com), and uploaded to [Speaker Deck](https://speakerdeck.com/jessesquires). 
+All presentations are created using [Deckset](http://www.decksetapp.com) or [Keynote](https://www.apple.com/mac/keynote/), and uploaded to [Speaker Deck](https://speakerdeck.com/jessesquires). 
 
-The original markdown for slides, speaker notes, and resources are included in this repo.
+The original `.md` or `.key` files for slides, speaker notes, and resources are all included in this repo.
 
 ## License
 
 >**Copyright &copy; 2015-present Jesse Squires**
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 
 <!-- Links -->
 
@@ -33,4 +34,9 @@ The original markdown for slides, speaker notes, and resources are included in t
 [slides2]:https://speakerdeck.com/jessesquires/swifty-view-controller-presenters
 [event2]:https://www.meetup.com/swift-language/events/227833264/
 [location2]:https://realm.io
-[video2]:https://realm.io/news
+[video2]:https://realm.io/news/slug-jesse-squires-swifty-view-controller-presenters
+
+[slides3]:https://speakerdeck.com/jessesquires/contributing-to-open-source-swift
+[event3]:http://www.tryswiftconf.com/en
+[location3]:http://www.tryswiftconf.com/en#location
+[video3]:https://realm.io/news/
