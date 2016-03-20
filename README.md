@@ -6,11 +6,11 @@
 |:--------------|:----------------------------------|:------------------------------|:----------------------------------|:----------------------------------|
 | 14 Apr 2015   | Using Core Data in Swift          | [Swift meetup][event1] (SLUG)   | [Realm][location1], San Francisco | [slides][slides1], [video][video1]|
 | 28 Jan 2016   | Swifty view controller presenters | [Swift meetup][event2] (SLUG)   | [Realm][location2], San Francisco | [slides][slides2], [video][video2]|
-| 04 Mar 2016   | Contributing to open source Swift | [try! Swift conference][event3] | [Tokyo][location3], Japan :jp: | [slides][slides3] |
+| 04 Mar 2016   | Contributing to open source Swift | [try! Swift conference][event3] | [Cyber Agent](https://www.cyberagent.co.jp), [Tokyo][location3] :jp: | [slides][slides3] |
 
 # Upcoming
 
-> TBA
+> To be announced. <a href="mailto:jesse.squires.developer@gmail.com">Contact me</a> about speaking engagements.
 
 ## About
 
