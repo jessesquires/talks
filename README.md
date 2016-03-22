@@ -2,11 +2,11 @@
 
 *A list of talks that I've given*
 
-| Date          | Title                             | Event                         | Location                          | Links                             |
-|:--------------|:----------------------------------|:------------------------------|:----------------------------------|:----------------------------------|
-| 14 Apr 2015   | Using Core Data in Swift          | [Swift meetup][event1] (SLUG)   | [Realm][location1], San Francisco | [slides][slides1], [video][video1]|
-| 28 Jan 2016   | Swifty view controller presenters | [Swift meetup][event2] (SLUG)   | [Realm][location2], San Francisco | [slides][slides2], [video][video2]|
-| 04 Mar 2016   | Contributing to open source Swift | [try! Swift conference][event3] | [Cyber Agent](https://www.cyberagent.co.jp), [Tokyo][location3] :jp: | [slides][slides3] |
+| Date          | Title                             | Event                           | Location                             | Links                              |
+|:--------------|:----------------------------------|:--------------------------------|:-------------------------------------|:-----------------------------------|
+| 14 Apr 2015   | Using Core Data in Swift          | [Swift meetup][event1] (SLUG)   | [Realm][location1], San Francisco    | [slides][slides1], [video][video1] |
+| 28 Jan 2016   | Swifty view controller presenters | [Swift meetup][event2] (SLUG)   | [Realm][location2], San Francisco    | [slides][slides2], [video][video2] |
+| 04 Mar 2016   | Contributing to open source Swift | [try! Swift conference][event3] | [Cyber Agent][location3], Tokyo :jp: | [slides][slides3], [video][video3] |
 
 # Upcoming
 
@@ -38,5 +38,5 @@ The original `.md` or `.key` files for slides, speaker notes, and resources are 
 
 [slides3]:https://speakerdeck.com/jessesquires/contributing-to-open-source-swift
 [event3]:http://www.tryswiftconf.com/en
-[location3]:http://www.tryswiftconf.com/en#location
-[video3]:https://realm.io/news/
+[location3]:https://www.cyberagent.co.jp
+[video3]:https://realm.io/news/tryswift-jesse-squires-contributing-open-source-swift/
