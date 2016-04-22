@@ -10,7 +10,9 @@
 
 # Upcoming
 
-> To be announced. <a href="mailto:jesse.squires.developer@gmail.com">Contact me</a> about speaking engagements.
+-  [Swift Summit](https://swiftsummit.com/), San Francisco, November 7-8, 2016
+
+> <a href="mailto:jesse.squires.developer@gmail.com">Contact me</a> about speaking engagements.
 
 ## About
 
