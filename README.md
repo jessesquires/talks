@@ -12,6 +12,7 @@
 
 | Date          | Event                       | Location                |
 |:--------------|:----------------------------|:------------------------|
+| 23 Sep 2016   | [FrenchKit][event4]         | Paris :fr:              |
 | 07 Nov 2016   | [Swift Summit][event5]      | San Francisco           |
 
 > <a href="mailto:jesse.squires.developer@gmail.com">Contact me</a> about speaking engagements.
@@ -44,5 +45,7 @@ The original `.md` or `.key` files for slides, speaker notes, and resources are 
 [event3]:http://www.tryswiftconf.com/en
 [location3]:https://www.cyberagent.co.jp
 [video3]:https://realm.io/news/tryswift-jesse-squires-contributing-open-source-swift/
+
+[event4]:http://frenchkit.fr
 
 [event5]:https://swiftsummit.com/
