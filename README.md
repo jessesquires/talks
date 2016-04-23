@@ -10,7 +10,9 @@
 
 # Upcoming
 
--  [Swift Summit](https://swiftsummit.com/), San Francisco, November 7-8, 2016
+| Date          | Event                       | Location                |
+|:--------------|:----------------------------|:------------------------|
+| 07 Nov 2016   | [Swift Summit][event5]      | San Francisco           |
 
 > <a href="mailto:jesse.squires.developer@gmail.com">Contact me</a> about speaking engagements.
 
@@ -42,3 +44,5 @@ The original `.md` or `.key` files for slides, speaker notes, and resources are 
 [event3]:http://www.tryswiftconf.com/en
 [location3]:https://www.cyberagent.co.jp
 [video3]:https://realm.io/news/tryswift-jesse-squires-contributing-open-source-swift/
+
+[event5]:https://swiftsummit.com/
