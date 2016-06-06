@@ -10,10 +10,11 @@
 
 # Upcoming
 
-| Date          | Event                       | Location                |
-|:--------------|:----------------------------|:------------------------|
-| 23 Sep 2016   | [FrenchKit][event4]         | Paris :fr:              |
-| 07 Nov 2016   | [Swift Summit][event5]      | San Francisco           |
+| Date          | Event                       | Location                             |
+|:--------------|:----------------------------|:-------------------------------------|
+| 13 Jun 2016   | [WWDC Swift Panel][event4]  | [Realm][location4], San Francisco    |
+| 23 Sep 2016   | [FrenchKit][event5]         | Paris :fr:                           |
+| 07 Nov 2016   | [Swift Summit][event6]      | San Francisco                        |
 
 > <a href="mailto:jesse.squires.developer@gmail.com">Contact me</a> about speaking engagements.
 
@@ -46,6 +47,9 @@ The original `.md` or `.key` files for slides, speaker notes, and resources are 
 [location3]:https://www.cyberagent.co.jp
 [video3]:https://realm.io/news/tryswift-jesse-squires-contributing-open-source-swift/
 
-[event4]:http://frenchkit.fr
+[event4]:http://www.meetup.com/swift-language/events/231196358/
+[location4]:https://realm.io
 
-[event5]:https://swiftsummit.com/
+[event5]:http://frenchkit.fr
+
+[event6]:https://swiftsummit.com/
