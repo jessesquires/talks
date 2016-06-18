@@ -16,7 +16,7 @@
 | 23 Sep 2016   | [FrenchKit][event5]         | Paris :fr:                           |
 | 07 Nov 2016   | [Swift Summit][event6]      | San Francisco                        |
 
-> <a href="mailto:jesse.squires.developer@gmail.com">Contact me</a> about speaking engagements.
+> <a href="mailto:jesse@jessesquires.com">Contact me</a> about speaking engagements.
 
 ## About
 
