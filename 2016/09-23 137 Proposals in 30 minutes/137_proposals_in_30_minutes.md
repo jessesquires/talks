@@ -34,9 +34,9 @@ jessesquires.com *•* @jesse_squires *•* @swiftlybrief
 
 ---
 
-# [fit] LOL
+# [fit] `"It's just metadata"`
 
-> *It's just metadata*
+# [fit] __*LOL*__
 
 ![right](https://www.wired.com/wp-content/uploads/2014/08/Cnt4_Fr53-1.jpg)
 
@@ -85,6 +85,12 @@ jessesquires.com *•* @jesse_squires *•* @swiftlybrief
 
 ---
 
+What happened in Swift 3:
+
+![original](http://core0.staticworld.net/images/article/2015/09/tim-cook-iphone-6s-everything-changed-100613696-large.idge.jpg)
+
+---
+
 # _**Proposals**_ accepted
 # _for Swift_ __*3.0*__
 # [fit] __*97*__
@@ -103,24 +109,61 @@ jessesquires.com *•* @jesse_squires *•* @swiftlybrief
 
 ---
 
-- Proposals for 2.x
-- Proposals for 3.x
-
----
-
 # Stats
 
-- Average time for review
-- Accept rate
-- Reject rate
+- Accepted, implemented, deferred, rejected
+
+- Acceptance rate, implementation rate, defer rate, reject rate
+
+- avg time for review, longest, shortest
+
+- avg # authors per proposal
+
+- core team vs community proposals
+
+- avg # proposals per author, top influencers?
+
+- types of proposals: bug, syntax refinement, feature refinement, new feature
 
 ---
 
-# Rejected
+# Specific proposals
+
+Most impactful
 
 ---
 
-# Deferred
+# Moving forward
+
+These are (mostly) great changes that are dramatically improving the language
+
+---
+
+# [fit] Make __*Swift*__ Great Again
+
+![](http://dayandadream.com/wp-content/uploads/2015/11/donald-trump.jpg)
+
+---
+
+# What did it the cost?
+
+---
+
+# what did we give up?
+
+---
+
+# [fit] Opportunity Cost
+
+---
+
+- No ABI stability
+- No C++ interop
+- etc.
+
+---
+
+# What is worth it?
 
 ---
 
@@ -128,19 +171,7 @@ jessesquires.com *•* @jesse_squires *•* @swiftlybrief
 
 ---
 
-# Types of proposals
-
----
-
-# __*SE-0001*__
-
----
-
-what was left out of swift 3
-
----
-
-# Thanks!
+# `Merci!`
 
 ![](http://iliketowastemytime.com/sites/default/files/millau-viaduct-france-large-bridge-hd-wallpaper.jpg)
 
