@@ -1,22 +1,107 @@
 theme: Letters from Sweden, 3
+autoscale: true
+build-lists: true
 
 # [fit] __*137*__ *proposals*
 
-# [fit] *in* __*30*__ *minutes*
-<br/>
+# [fit] *in* _**30**_ *minutes*
+<br>
 ## __*Jesse Squires*__
 
 jessesquires.com *•* @jesse_squires *•* @swiftlybrief
 
 ---
 
-# swift-evolution
+# [fit] swift __*evolution*__
 
-what is it?
+> The Swift evolution process aims to leverage the collective ideas, insights, and experience of the Swift community to improve the Swift development experience.
+
+1. *Engage community*
+2. *Maintain vision and conceptual coherence*
+3. *Core team responsible for strategic direction*
 
 ---
 
-# From Swift 1.0 to 3.0
+# [fit] Swift
+# [fit] __*1.0*__ to __*3.0*__
+
+---
+
+# [fit] Proposal
+# [fit] metadata
+
+# [fit] _**What can we learn?**_
+
+---
+
+# [fit] LOL
+
+> *It's just metadata*
+
+![right](https://www.wired.com/wp-content/uploads/2014/08/Cnt4_Fr53-1.jpg)
+
+---
+
+# [fit] Swift __*1.0*__ to __*2.1*__
+
+![fit](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Swift_logo.svg/2000px-Swift_logo.svg.png)
+
+---
+
+<br><br><br><br><br><br><br><br>
+# [fit] no proposals
+
+*#yatusabes*
+
+*(not open source yet)*
+
+![](../../img/jobs_gates.jpg)
+
+---
+
+# Proposals _**accepted**_
+# and _**implemented**_
+# for Swift __*2.2*__
+# [fit] __*8*__
+
+---
+
+# Implemented for __*2.2*__
+
+- SE-0001
+- SE-0011
+- SE-0014
+- SE-0015
+- SE-0020
+- SE-0021
+- SE-0022
+- SE-0028
+
+---
+
+# [fit] Swift __*3.0*__
+
+![fit](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Swift_logo.svg/2000px-Swift_logo.svg.png)
+
+---
+
+# _**Proposals**_ accepted
+# _for Swift_ __*3.0*__
+# [fit] __*97*__
+
+---
+
+# _**Proposals**_ implemented
+# _for Swift_ __*3.0*__
+# [fit] __*90*__
+
+---
+
+# [fit] _Proposals **everywhere**_
+
+![](../../img/everywhere.jpeg)
+
+---
 
 - Proposals for 2.x
 - Proposals for 3.x
@@ -53,3 +138,24 @@ what is it?
 
 what was left out of swift 3
 
+---
+
+# Thanks!
+
+![](http://iliketowastemytime.com/sites/default/files/millau-viaduct-france-large-bridge-hd-wallpaper.jpg)
+
+---
+
+# [fit] Resources
+
+Swift Weekly Brief:
+_swiftweekly.github.io_
+_@swiftlybrief_
+
+Apple:
+_swift.org_
+_github.com/apple/swift-evolution_
+
+Me:
+_jessesquires.com_
+_github.com/jessesquires/talks_
