@@ -10,11 +10,22 @@ jessesquires.com *•* @jesse_squires *•* @swiftlybrief
 
 # swift-evolution
 
-intro
+what is it?
 
 ---
 
 # From Swift 1.0 to 3.0
+
+- Proposals for 2.x
+- Proposals for 3.x
+
+---
+
+# Stats
+
+- Average time for review
+- Accept rate
+- Reject rate
 
 ---
 
@@ -26,6 +37,10 @@ intro
 
 ---
 
+# Commonly proposed
+
+---
+
 # Types of proposals
 
 ---
@@ -33,3 +48,6 @@ intro
 # __*SE-0001*__
 
 ---
+
+what was left out of swift 3
+
