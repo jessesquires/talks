@@ -21,6 +21,20 @@ jessesquires.com *•* @jesse_squires *•* @swiftlybrief
 3. *Core team responsible for strategic direction*
 
 ---
+In other words...
+
+# [fit] Turn our __*ideas*__
+# [fit] Into Improvements
+
+![fit](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Swift_logo.svg/2000px-Swift_logo.svg.png)
+
+---
+
+# [fit] Make __*Swift*__ Great Again
+
+![](http://dayandadream.com/wp-content/uploads/2015/11/donald-trump.jpg)
+
+---
 
 # [fit] Swift
 # [fit] __*1.0*__ to __*3.0*__
@@ -85,7 +99,15 @@ jessesquires.com *•* @jesse_squires *•* @swiftlybrief
 
 ---
 
-What happened in Swift 3:
+# Goals
+
+---
+
+# [fit] What actually happened?
+
+---
+
+Swift 3 IRL:
 
 ![original](http://core0.staticworld.net/images/article/2015/09/tim-cook-iphone-6s-everything-changed-100613696-large.idge.jpg)
 
@@ -189,4 +211,4 @@ _github.com/apple/swift-evolution_
 
 Me:
 _jessesquires.com_
-_github.com/jessesquires/talks_
+_github.com/jessesquires/swift-proposal-analyzer_
