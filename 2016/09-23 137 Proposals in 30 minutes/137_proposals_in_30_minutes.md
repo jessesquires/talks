@@ -2,7 +2,7 @@ theme: Letters from Sweden, 3
 autoscale: true
 build-lists: true
 
-# [fit] __*137*__ *proposals*
+# [fit] __*140*__ *proposals*
 
 # [fit] *in* _**30**_ *minutes*
 <br>
@@ -26,18 +26,28 @@ In other words...
 # [fit] Turn our __*ideas*__
 # [fit] Into Improvements
 
-![fit](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Swift_logo.svg/2000px-Swift_logo.svg.png)
+![fit](../../img/swift-logo.png)
 
 ---
 
 # [fit] Make __*Swift*__ Great Again
 
-![](http://dayandadream.com/wp-content/uploads/2015/11/donald-trump.jpg)
+![](http://cdn2.business2community.com/wp-content/uploads/2015/07/Donald_Trump_Offensive_Quotes_4067_5187.jpg.jpg)
 
 ---
 
 # [fit] Swift
 # [fit] __*1.0*__ to __*3.0*__
+
+---
+
+# [fit] How did we get here?
+
+Finally, *Swift 3.0* has arrived! 😎
+
+But *how* did that happen? 🤔
+
+Let's *analyze* swift-evolution proposals! 🤓
 
 ---
 
@@ -53,6 +63,24 @@ In other words...
 # [fit] __*LOL*__
 
 ![right](https://www.wired.com/wp-content/uploads/2014/08/Cnt4_Fr53-1.jpg)
+
+---
+
+# Proposals
+
+# [fit] __*140*__
+
+---
+
+# Authors
+
+# [fit] __*78*__
+
+---
+
+# Proposal per Author
+# [fit] __*1.78*__
+# `avg`
 
 ---
 
@@ -104,6 +132,17 @@ In other words...
 ---
 
 # [fit] What actually happened?
+
+---
+
+<br><br><br>
+
+*Swift 3:*
+*Nothing compiles*
+
+# [fit] lol
+
+![](img/lattner.jpg)
 
 ---
 

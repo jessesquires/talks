@@ -1,3 +1,0 @@
-# Swift-evolution proposal statistics
-
-
