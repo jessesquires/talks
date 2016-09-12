@@ -115,6 +115,10 @@ Let's *analyze* swift-evolution proposals! 🤓
 
 ![fit](../../img/swift-logo.png)
 
+^Open sourced Dec 3, 2015
+^Released March 21, 2016
+^3-4 months of dev
+
 ---
 
 # Swift __*3.0*__
@@ -122,6 +126,9 @@ Let's *analyze* swift-evolution proposals! 🤓
 # Proposals implemented
 
 ![fit](../../img/swift-logo.png)
+
+^From March 2016 to Sept 2016
+^5-6 months of dev
 
 ---
 
@@ -132,15 +139,27 @@ Let's *analyze* swift-evolution proposals! 🤓
 # [fit] 1012%
 # [fit] __*increase*__
 
+![right](img/jared-confused.gif)
+
 ---
 
 # [fit] Swift __*3.0*__
+
+*1012% more swifty™*
 
 ![fit](../../img/swift-logo.png)
 
 ---
 
-# Goals
+# __*Goals*__
+
+- Stable ABI (Application Binary Interface)
+- Resilience
+- Portability
+- Type system cleanup and docs
+- Complete generics
+- Focus and refine language
+- API design guidelines
 
 ---
 
@@ -159,19 +178,40 @@ Let's *analyze* swift-evolution proposals! 🤓
 
 ---
 
-Swift 3 IRL:
+Swift 3:
+Even Tim Cook be like `¯\_(ツ)_/¯`
 
-![original](http://core0.staticworld.net/images/article/2015/09/tim-cook-iphone-6s-everything-changed-100613696-large.idge.jpg)
+![original](img/cook-change.jpg)
+
+^even Tim Cook knew what was going on
 
 ---
+
+<br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br>
+
+*__Overwhelming__ community participation!*
 
 # [fit] _Proposals **everywhere**_
 
 ![](../../img/everywhere.jpeg)
 
+^75% of all proposals were accepted for Swift 3
+
 ---
 
 # New Goals
+
+- *API design guidelines*
+    - Automatic application of naming guidelines to imported Objective-C APIs
+    - Adoption of naming guidelines in key APIs
+    - Swiftification of imported Objective-C APIs
+- *Focus and refine language*
+- Improvements to tooling quality
+
+*(a.k.a Source Stability)*
+
+^[goals diff](https://github.com/apple/swift-evolution/commit/06b69a6e51a71a462c268da60b51a18966dba31b)
 
 ---
 
@@ -181,8 +221,66 @@ Swift 3 IRL:
 
 ---
 
-# Behind every proposal
-# is an author
+# [SE-0005](https://github.com/apple/swift-evolution/blob/master/proposals/0005-objective-c-name-translation.md)
+Better Translation of Objective-C APIs Into Swift
+
+---
+
+# [SE-0025](https://github.com/apple/swift-evolution/blob/master/proposals/0025-scoped-access-level.md)
+Scoped Access Level
+
+---
+
+# [SE-0117](https://github.com/apple/swift-evolution/blob/master/proposals/0117-non-public-subclassable-by-default.md)
+Allow distinguishing between public access and public overridability
+
+---
+
+Definitely:
+- SE-0065, A New Model for Collections and Indices
+- SE-0069, Mutability and Foundation Value Types
+- SE-0072, Fully eliminate implicit bridging conversions from Swift
+
+Maybe:
+- SE-0060, Enforcing order of defaulted parameters
+- SE-0062, Referencing Objective-C key-paths
+- SE-0064, Referencing the Objective-C selector of property getters and setters
+- SE-0086, Drop NS Prefix in Swift Foundation
+
+---
+
+# [fit] The cost of Swift Evolution
+
+<br>
+
+![](img/erlich-money.gif)
+
+---
+
+# [fit] __*Opportunity*__
+# [fit] __*Cost*__
+# [fit] what did we give up?
+
+^Most of Swift 3's original goals!
+^Novelty effect
+^Necessary evil
+^But source stability is extremely important
+
+---
+
+# [fit] __*What is worth it?*__
+
+# [fit] `Source stability >> ABI stability`
+
+---
+
+# Finally...
+# Behind every
+# proposal
+# is an __*author*__ 💪
+
+^It is a lot of work to push a proposal forward
+^Write formal proposal, discuss on mailing list
 
 ---
 
@@ -198,11 +296,7 @@ Swift 3 IRL:
 
 ---
 
-# Stats
-
-- Accepted, implemented, deferred, rejected
-
-- Acceptance rate, implementation rate, defer rate, reject rate
+# Other Stats?
 
 - avg time for review, longest, shortest
 
@@ -216,53 +310,9 @@ Swift 3 IRL:
 
 ---
 
-# Specific proposals
-
-Most impactful
-
----
-
-# Moving forward
-
-These are (mostly) great changes that are dramatically improving the language
-
----
-
-# [fit] Make __*Swift*__ Great Again
-
-![](http://dayandadream.com/wp-content/uploads/2015/11/donald-trump.jpg)
-
----
-
-# What did it the cost?
-
----
-
-# what did we give up?
-
----
-
-# [fit] Opportunity Cost
-
----
-
-- No ABI stability
-- No C++ interop
-- etc.
-
----
-
-# What is worth it?
-
----
-
-# Commonly proposed
-
----
-
 # `Merci!`
 
-![](http://iliketowastemytime.com/sites/default/files/millau-viaduct-france-large-bridge-hd-wallpaper.jpg)
+![](img/millau.jpg)
 
 ---
 
