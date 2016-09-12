@@ -23,21 +23,25 @@ jessesquires.com *•* @jesse_squires *•* @swiftlybrief
 ---
 In other words...
 
-# [fit] Turn our __*ideas*__
+# [fit] Turn our[^*] __*ideas*__
 # [fit] Into Improvements
 
 ![fit](../../img/swift-logo.png)
+
+[^*]: *Anyone can participate!*
 
 ---
 
 # [fit] Make __*Swift*__ Great Again
 
-![](http://cdn2.business2community.com/wp-content/uploads/2015/07/Donald_Trump_Offensive_Quotes_4067_5187.jpg.jpg)
+![](img/drumpf.jpg)
 
 ---
 
 # [fit] Swift
 # [fit] __*1.0*__ to __*3.0*__
+
+~2 years of Swift
 
 ---
 
@@ -48,6 +52,8 @@ Finally, *Swift 3.0* has arrived! 😎
 But *how* did that happen? 🤔
 
 Let's *analyze* swift-evolution proposals! 🤓
+
+^I wrote a bunch of scripts!
 
 ---
 
@@ -62,7 +68,7 @@ Let's *analyze* swift-evolution proposals! 🤓
 
 # [fit] __*LOL*__
 
-![right](https://www.wired.com/wp-content/uploads/2014/08/Cnt4_Fr53-1.jpg)
+![right](img/snowden.jpg)
 
 ---
 
@@ -72,25 +78,27 @@ Let's *analyze* swift-evolution proposals! 🤓
 
 ---
 
-# Authors
+# [fit] __*98*__ implemented
+# [fit] __*7*__ accepted[^1]
+# [fit] __*10*__ deferred
+# [fit] __*19*__ Rejected
+# [fit] __*3*__ Withdrawn
+# [fit] 3 __*in review*__
 
-# [fit] __*78*__
-
----
-
-# Proposal per Author
-# [fit] __*1.78*__
-# `avg`
-
----
-
-# [fit] Swift __*1.0*__ to __*2.1*__
-
-![fit](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Swift_logo.svg/2000px-Swift_logo.svg.png)
+[^1]: But not yet implemented
 
 ---
 
-<br><br><br><br><br><br><br><br>
+# Acceptance:
+# [fit] __*75%*__
+# Implementation:
+# [fit] __*70%*__
+
+---
+
+# Swift __*1.0*__ to __*2.1*__
+
+<br><br><br><br><br><br><br>
 # [fit] no proposals
 
 *#yatusabes*
@@ -101,29 +109,34 @@ Let's *analyze* swift-evolution proposals! 🤓
 
 ---
 
-# Proposals _**accepted**_
-# and _**implemented**_
-# for Swift __*2.2*__
+# Swift __*2.2*__
 # [fit] __*8*__
+# Proposals implemented
+
+![fit](../../img/swift-logo.png)
 
 ---
 
-# Implemented for __*2.2*__
+# Swift __*3.0*__
+# [fit] __*89*__
+# Proposals implemented
 
-- SE-0001
-- SE-0011
-- SE-0014
-- SE-0015
-- SE-0020
-- SE-0021
-- SE-0022
-- SE-0028
+![fit](../../img/swift-logo.png)
+
+---
+
+# [fit] `11x` __*more*__ 😱
+
+---
+
+# [fit] 1012%
+# [fit] __*increase*__
 
 ---
 
 # [fit] Swift __*3.0*__
 
-![fit](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Swift_logo.svg/2000px-Swift_logo.svg.png)
+![fit](../../img/swift-logo.png)
 
 ---
 
@@ -152,21 +165,36 @@ Swift 3 IRL:
 
 ---
 
-# _**Proposals**_ accepted
-# _for Swift_ __*3.0*__
-# [fit] __*97*__
-
----
-
-# _**Proposals**_ implemented
-# _for Swift_ __*3.0*__
-# [fit] __*90*__
-
----
-
 # [fit] _Proposals **everywhere**_
 
 ![](../../img/everywhere.jpeg)
+
+---
+
+# New Goals
+
+---
+
+# [fit] VIP's
+
+# [fit] __*very important proposals*__
+
+---
+
+# Behind every proposal
+# is an author
+
+---
+
+# Authors
+
+# [fit] __*78*__
+
+---
+
+# Proposal per Author
+# [fit] __*1.78*__
+# `avg`
 
 ---
 
