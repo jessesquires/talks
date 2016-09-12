@@ -141,6 +141,10 @@ Let's *analyze* swift-evolution proposals! 🤓
 
 ![right](img/jared-confused.gif)
 
+^1000% more swift
+^definitely 1000% more of something
+^1000% fewer typos lol
+
 ---
 
 # [fit] Swift __*3.0*__
@@ -179,11 +183,11 @@ Let's *analyze* swift-evolution proposals! 🤓
 ---
 
 Swift 3:
-Even Tim Cook be like `¯\_(ツ)_/¯`
+Even Tim Cook was like `¯\_(ツ)_/¯`
 
 ![original](img/cook-change.jpg)
 
-^even Tim Cook knew what was going on
+^Tim Cook thought he was talking about the new iPhone but he was really talking about Swift 3
 
 ---
 
