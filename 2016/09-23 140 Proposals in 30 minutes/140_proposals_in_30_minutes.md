@@ -96,6 +96,38 @@ Let's *analyze* swift-evolution proposals! 🤓
 
 ---
 
+# Authors
+
+# [fit] __*78*__
+
+^It is a lot of work to push a proposal forward
+^Write formal proposal, discuss on mailing list
+
+---
+# [fit] __*100*__ one author
+# [fit] __*30*__ two authors
+# [fit] __*9*__ three authors
+# [fit] __*1*__ nine authors
+# [fit] __*1.79*__ `avg per proposal`
+
+---
+
+# [fit] `Top Authors`
+# [fit] __*25*__ Erica Sadun
+# [fit] __*13*__ Doug Gregor
+# [fit] __*12*__ Joe Groff
+# [fit] __*10*__ Dave Abrahams
+# [fit] __*10*__ Chris Lattner
+
+---
+
+# How did each release
+# evolve?
+
+![fit](img/evolve.jpg)
+
+---
+
 # Swift __*1.0*__ to __*2.1*__
 
 <br><br><br><br><br><br><br>
@@ -219,6 +251,15 @@ Even Tim Cook was like `¯\_(ツ)_/¯`
 
 ---
 
+# [fit] Types of proposals
+
+- *Syntax refinements*
+- *API improvements, redesigns*
+- *Features (new, refined)*
+- *"Bug fixes"*
+
+---
+
 # [fit] VIP's
 
 # [fit] __*very important proposals*__
@@ -239,13 +280,14 @@ Scoped Access Level
 Allow distinguishing between public access and public overridability
 
 ---
+# TODO:
 
-Definitely:
+select a couple more proposals to discuss
+
 - SE-0065, A New Model for Collections and Indices
 - SE-0069, Mutability and Foundation Value Types
 - SE-0072, Fully eliminate implicit bridging conversions from Swift
 
-Maybe:
 - SE-0060, Enforcing order of defaulted parameters
 - SE-0062, Referencing Objective-C key-paths
 - SE-0064, Referencing the Objective-C selector of property getters and setters
@@ -272,45 +314,9 @@ Maybe:
 
 ---
 
-# [fit] __*What is worth it?*__
+# [fit] __*Was it worth it?*__
 
 # [fit] `Source stability >> ABI stability`
-
----
-
-# Finally...
-# Behind every
-# proposal
-# is an __*author*__ 💪
-
-^It is a lot of work to push a proposal forward
-^Write formal proposal, discuss on mailing list
-
----
-
-# Authors
-
-# [fit] __*78*__
-
----
-
-# Proposal per Author
-# [fit] __*1.78*__
-# `avg`
-
----
-
-# Other Stats?
-
-- avg time for review, longest, shortest
-
-- avg # authors per proposal
-
-- core team vs community proposals
-
-- avg # proposals per author, top influencers?
-
-- types of proposals: bug, syntax refinement, feature refinement, new feature
 
 ---
 
