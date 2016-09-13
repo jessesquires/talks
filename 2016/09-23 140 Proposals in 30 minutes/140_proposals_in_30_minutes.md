@@ -213,9 +213,8 @@ Let's *analyze* swift-evolution proposals! 🤓
 ![](img/lattner.jpg)
 
 ---
-
-Swift 3:
-Even Tim Cook was like `¯\_(ツ)_/¯`
+Tim Cook: talking about new iPhone...
+or Swift 3? `¯\_(ツ)_/¯`
 
 ![original](img/cook-change.jpg)
 
@@ -269,15 +268,21 @@ Even Tim Cook was like `¯\_(ツ)_/¯`
 # [SE-0005](https://github.com/apple/swift-evolution/blob/master/proposals/0005-objective-c-name-translation.md)
 Better Translation of Objective-C APIs Into Swift
 
+# TODO:
+
 ---
 
 # [SE-0025](https://github.com/apple/swift-evolution/blob/master/proposals/0025-scoped-access-level.md)
 Scoped Access Level
 
+# TODO:
+
 ---
 
 # [SE-0117](https://github.com/apple/swift-evolution/blob/master/proposals/0117-non-public-subclassable-by-default.md)
 Allow distinguishing between public access and public overridability
+
+# TODO:
 
 ---
 # TODO:
