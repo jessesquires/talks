@@ -270,8 +270,6 @@ __Better Translation of Objective-C APIs Into Swift__
 *Make Cocoa/Objective-C APIs Great Again!™*
 
 ```swift
-// Example:
-
 // Before
 let content = text.stringByTrimmingCharactersInSet(
             NSCharacterSet.whitespaceAndNewlineCharacterSet())
@@ -306,11 +304,13 @@ let sorted = array.sorted()
 __Scoped Access Level__
 *Make Access Control Specifiers Great Again!™*
 
-Before:
-*public* > *internal* > *private* (to file)
+```swift
+// Before
+public > internal > private // (to file)
 
-After:
-*public* > *internal* > *fileprivate* > *private* (to scope)
+// After
+public > internal > fileprivate > private // (to scope)
+```
 
 ---
 
@@ -319,8 +319,6 @@ __Allow distinguishing between public access and public overridability__
 *Make Subclassing Great Again!™*
 
 ```swift
-// Example:
-
 // Before
 public class ViewController: UIViewController { }
 
@@ -330,18 +328,78 @@ open class ViewController: UIViewController { }
 
 ---
 
+# [fit] __*Access control in Swift 3*__
+
+### `open`
+### `public`
+### `internal`
+### `fileprivate`
+### `private`
+
+![50%](../../img/jackie.jpg)
+
+---
+
+#[ SE-0069](https://github.com/apple/swift-evolution/blob/master/proposals/0069-swift-mutability-for-foundation.md)
+__Mutability and Foundation Value Types__
+*Make Foundation Great Again!™*
+
+```swift
+// Before
+let myDate = Date()
+let myLaterDate = myDate.dateByAddingTimeInterval(60)
+
+// After
+var myDate = Date()
+myDate.addTimeInterval(60) // OK
+
+let myOtherDate = Date()
+myOtherDate.addTimeInterval(60) // Error (let constant)
+
+```
+
+^More natural use of foundation
+^Big performance increases (e.g., NSDate)
+
+---
+
+# [SE-0086](https://github.com/apple/swift-evolution/blob/master/proposals/0086-drop-foundation-ns.md)
+__Drop NS Prefix in Swift Foundation__
+*Make Prefixes Great Again!™*
+
+```swift
+// Examples:
+
+NSDate > Date
+
+NSURLSession > URLSession
+
+NSCalendarUnit > Calendar.Unit
+
+NSOperationQueuePriority > Operation.QueuePriority
+```
+
+---
+
+# [SE-0065](https://github.com/apple/swift-evolution/blob/master/proposals/0065-collections-move-indices.md)
+__A New Model for Collections and Indices__
+*Make Collection Indices Great Again!™*
+
+```swift
+// Before
+// After
+```
+
+---
+
 # TODO:
 
-select a couple more proposals to discuss
+select a couple more proposals to discuss?
 
-- SE-0065, A New Model for Collections and Indices
-- SE-0069, Mutability and Foundation Value Types
 - SE-0072, Fully eliminate implicit bridging conversions from Swift
 
-- SE-0060, Enforcing order of defaulted parameters
 - SE-0062, Referencing Objective-C key-paths
 - SE-0064, Referencing the Objective-C selector of property getters and setters
-- SE-0086, Drop NS Prefix in Swift Foundation
 
 ---
 
