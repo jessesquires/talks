@@ -79,18 +79,18 @@ Let's *analyze* swift-evolution proposals! 🤓
 ---
 
 # [fit] __*98*__ implemented
-# [fit] __*7*__ accepted[^1]
+# [fit] __*9*__ accepted[^1]
 # [fit] __*10*__ deferred
 # [fit] __*19*__ Rejected
 # [fit] __*3*__ Withdrawn
-# [fit] 3 __*in review*__
+# [fit] 1 __*in review*__
 
 [^1]: But not yet implemented
 
 ---
 
 # Acceptance:
-# [fit] __*75%*__
+# [fit] __*76%*__
 # Implementation:
 # [fit] __*70%*__
 
