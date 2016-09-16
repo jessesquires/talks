@@ -266,25 +266,70 @@ or Swift 3? `¯\_(ツ)_/¯`
 ---
 
 # [SE-0005](https://github.com/apple/swift-evolution/blob/master/proposals/0005-objective-c-name-translation.md)
-Better Translation of Objective-C APIs Into Swift
+__Better Translation of Objective-C APIs Into Swift__
+*Make Cocoa/Objective-C APIs Great Again!™*
 
-# TODO:
+```swift
+// Example:
+
+// Before
+let content = text.stringByTrimmingCharactersInSet(
+            NSCharacterSet.whitespaceAndNewlineCharacterSet())
+
+// After
+let content = text.trimming(.whitespaceAndNewlines)
+
+```
+
+^Refine how Cocoa/Objective-C APIs are imported
+
+---
+
+# [SE-0023](https://github.com/apple/swift-evolution/blob/master/proposals/0023-api-guidelines.md)
+__API Design Guidelines__ ("The Great API transformation")
+*Make Swift APIs Great Again!™*
+
+```swift
+// Example:
+var array = [34, 79, 12, 3, 2, 56]
+
+// sort in-place
+array.sort()
+
+// return new, sorted array
+let sorted = array.sorted()
+```
 
 ---
 
 # [SE-0025](https://github.com/apple/swift-evolution/blob/master/proposals/0025-scoped-access-level.md)
-Scoped Access Level
+__Scoped Access Level__
+*Make Access Control Specifiers Great Again!™*
 
-# TODO:
+Before:
+*public* > *internal* > *private* (to file)
+
+After:
+*public* > *internal* > *fileprivate* > *private* (to scope)
 
 ---
 
 # [SE-0117](https://github.com/apple/swift-evolution/blob/master/proposals/0117-non-public-subclassable-by-default.md)
-Allow distinguishing between public access and public overridability
+__Allow distinguishing between public access and public overridability__
+*Make Subclassing Great Again!™*
 
-# TODO:
+```swift
+// Example:
+
+// Before
+public class ViewController: UIViewController { }
+
+// After
+open class ViewController: UIViewController { }
+```
 
 ---
+
 # TODO:
 
 select a couple more proposals to discuss
