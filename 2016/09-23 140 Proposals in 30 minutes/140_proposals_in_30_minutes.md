@@ -47,7 +47,7 @@ In other words...
 
 # [fit] How did we get here?
 
-Finally, *Swift 3.0* has arrived! 😎
+*Swift 3.0* has arrived! 😎
 
 But *how* did that happen? 🤔
 
