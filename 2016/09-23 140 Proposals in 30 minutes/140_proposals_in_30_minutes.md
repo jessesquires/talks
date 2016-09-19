@@ -96,6 +96,14 @@ Let's *analyze* swift-evolution proposals! 🤓
 
 ---
 
+# Word Counts
+# [fit] __*1191*__ `avg`
+# [fit] __*769*__ `median`
+# [fit] __*7300*__ `max`
+# [fit] __*167*__ `min`
+
+---
+
 # Authors
 
 # [fit] __*78*__
@@ -213,8 +221,8 @@ Let's *analyze* swift-evolution proposals! 🤓
 ![](img/lattner.jpg)
 
 ---
-Tim Cook: talking about new iPhone...
-or Swift 3? `¯\_(ツ)_/¯`
+Talking about new iPhone... or Swift 3?
+`¯\_(ツ)_/¯`
 
 ![original](img/cook-change.jpg)
 
@@ -280,6 +288,7 @@ let content = text.trimming(.whitespaceAndNewlines)
 ```
 
 ^Refine how Cocoa/Objective-C APIs are imported
+^Remove redundancy. Verbosity != clarity
 
 ---
 
@@ -358,7 +367,7 @@ myOtherDate.addTimeInterval(60) // Error (let constant)
 
 ```
 
-^More natural use of foundation
+^More natural use of foundation (var and let)
 ^Big performance increases (e.g., NSDate)
 
 ---
@@ -379,6 +388,8 @@ NSCalendarUnit > Calendar.Unit
 NSOperationQueuePriority > Operation.QueuePriority
 ```
 
+^Rename types, hoisted types
+
 ---
 
 # [SE-0065](https://github.com/apple/swift-evolution/blob/master/proposals/0065-collections-move-indices.md)
@@ -386,9 +397,18 @@ __A New Model for Collections and Indices__
 *Make Collection Indices Great Again!™*
 
 ```swift
+var index = c.index(where: { /* condition */ })
+
 // Before
+index.successor()
+
 // After
+collection.index(after: index)
 ```
+
+^complete rewrite
+^index traversal moved from index to collection
+^huge perf benefits (index doesn't have to know about collection)
 
 ---
 
@@ -416,8 +436,8 @@ select a couple more proposals to discuss?
 # [fit] what did we give up?
 
 ^Most of Swift 3's original goals!
-^Novelty effect
-^Necessary evil
+^ABI, generics
+^First OSS release, novelty effect, necessary evil
 ^But source stability is extremely important
 
 ---
@@ -425,6 +445,10 @@ select a couple more proposals to discuss?
 # [fit] __*Was it worth it?*__
 
 # [fit] `Source stability >> ABI stability`
+
+^Always trades-offs
+^I think source stability is far more important (at least initially)
+^However, some proposals were distracting
 
 ---
 
@@ -436,6 +460,10 @@ select a couple more proposals to discuss?
 
 # [fit] Resources
 
+Me:
+_jessesquires.com_
+_github.com/jessesquires/swift-proposal-analyzer_
+
 Swift Weekly Brief:
 _swiftweekly.github.io_
 _@swiftlybrief_
@@ -443,7 +471,3 @@ _@swiftlybrief_
 Apple:
 _swift.org_
 _github.com/apple/swift-evolution_
-
-Me:
-_jessesquires.com_
-_github.com/jessesquires/swift-proposal-analyzer_
