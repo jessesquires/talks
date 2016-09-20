@@ -10,6 +10,10 @@ build-lists: true
 
 jessesquires.com *•* @jesse_squires *•* @swiftlybrief
 
+^Intro: SF, iOS at IG, Swift Weekly, JSQMessages
+Talk evolved a lot while writing
+Not discussing each prop, but stats + some most important
+
 ---
 
 # [fit] swift __*evolution*__
@@ -19,6 +23,9 @@ jessesquires.com *•* @jesse_squires *•* @swiftlybrief
 1. *Engage community*
 2. *Maintain vision and conceptual coherence*
 3. *Core team responsible for strategic direction*
+
+^If you aren't familiar
+Swift-evo process represents openness of Swift
 
 ---
 In other words...
@@ -43,6 +50,8 @@ In other words...
 
 ~2 years of Swift
 
+^It's only been 2 years! Tons of changes.
+
 ---
 
 # [fit] How did we get here?
@@ -53,7 +62,9 @@ But *how* did that happen? 🤔
 
 Let's *analyze* swift-evolution proposals! 🤓
 
-^I wrote a bunch of scripts!
+^Originally, I wanted to discuss all proposals (kind of a lightning talk)
+But, as I started writing, I had a lot of questions that I couldn't answer
+So, I wrote a bunch of scripts to analyze!
 
 ---
 
@@ -62,6 +73,11 @@ Let's *analyze* swift-evolution proposals! 🤓
 
 # [fit] _**What can we learn?**_
 
+^I'll be posting a github repo with all the code
+1. fetches all the proposals
+2. dumps them in a playground
+3. parses them -> structured data
+
 ---
 
 # [fit] `"It's just metadata"`
@@ -69,6 +85,28 @@ Let's *analyze* swift-evolution proposals! 🤓
 # [fit] __*LOL*__
 
 ![right](img/snowden.jpg)
+
+^Today, just doing some basics with metadata
+But still, some interesting things!
+In the future, we could do much more sophisticated analysis
+
+---
+
+```swift
+// swift-proposal-analyzer.playground
+
+struct Proposal {
+    let title: String
+    let seNumber: String
+    let authors: [String]
+    let status: Status // .inReview, .accepted, etc.
+
+    let fileName: String
+    let wordCount: Int
+}
+```
+
+^Once fetching and parsing is complete, you end up with an array of `Proposal` structs
 
 ---
 
@@ -98,9 +136,12 @@ Let's *analyze* swift-evolution proposals! 🤓
 
 # Word Counts
 # [fit] __*1191*__ `avg`
-# [fit] __*769*__ `median`
 # [fit] __*7300*__ `max`
+# [fit] __*769*__ `median`
 # [fit] __*167*__ `min`
+
+^This calculation is a bit naive, not extremely precise
+But, gives us a general idea for length/complexity
 
 ---
 
@@ -108,8 +149,9 @@ Let's *analyze* swift-evolution proposals! 🤓
 
 # [fit] __*78*__
 
-^It is a lot of work to push a proposal forward
-^Write formal proposal, discuss on mailing list
+^Authors!
+A lot of work to push a proposal forward
+Write, discuss, revise
 
 ---
 # [fit] __*100*__ one author
@@ -127,12 +169,17 @@ Let's *analyze* swift-evolution proposals! 🤓
 # [fit] __*10*__ Dave Abrahams
 # [fit] __*10*__ Chris Lattner
 
+^Authors or co-authors
+Erica: written as many as Doug + Joe
+
 ---
 
 # How did each release
 # evolve?
 
 ![fit](img/evolve.jpg)
+
+^Let's look at proposals per version
 
 ---
 
@@ -156,8 +203,8 @@ Let's *analyze* swift-evolution proposals! 🤓
 ![fit](../../img/swift-logo.png)
 
 ^Open sourced Dec 3, 2015
-^Released March 21, 2016
-^3-4 months of dev
+Released March 21, 2016
+**3-4 months of dev**
 
 ---
 
@@ -168,7 +215,7 @@ Let's *analyze* swift-evolution proposals! 🤓
 ![fit](../../img/swift-logo.png)
 
 ^From March 2016 to Sept 2016
-^5-6 months of dev
+**5-6 months of dev**
 
 ---
 
@@ -182,8 +229,8 @@ Let's *analyze* swift-evolution proposals! 🤓
 ![right](img/jared-confused.gif)
 
 ^1000% more swift
-^definitely 1000% more of something
-^1000% fewer typos lol
+definitely 1000% more of something
+1000% fewer typos lol
 
 ---
 
@@ -193,9 +240,12 @@ Let's *analyze* swift-evolution proposals! 🤓
 
 ![fit](../../img/swift-logo.png)
 
+^Joking, but this is kind of true
+Proposals for Swift 3 really define what "swifty" means!
+
 ---
 
-# __*Goals*__
+# __*Original Goals*__
 
 - Stable ABI (Application Binary Interface)
 - Resilience
