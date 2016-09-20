@@ -97,11 +97,13 @@ In the future, we could do much more sophisticated analysis
 
 struct Proposal {
     let title: String
-    let seNumber: String
+    let seNumber: String    // e.g., SE-0001
+
     let authors: [String]
-    let status: Status // .inReview, .accepted, etc.
+    let status: Status      // .inReview, .accepted, etc.
 
     let fileName: String
+    let fileContents: String
     let wordCount: Int
 }
 ```
