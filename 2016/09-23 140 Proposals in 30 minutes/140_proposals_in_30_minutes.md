@@ -304,7 +304,9 @@ Talking about new iPhone... or Swift 3?
 
 *(a.k.a Source Stability)*
 
-^[goals diff](https://github.com/apple/swift-evolution/commit/06b69a6e51a71a462c268da60b51a18966dba31b)
+^Evolution process didn't contribute to all goals
+It changed them!
+[goals diff](https://github.com/apple/swift-evolution/commit/06b69a6e51a71a462c268da60b51a18966dba31b)
 
 ---
 
