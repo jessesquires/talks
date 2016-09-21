@@ -154,7 +154,7 @@ But, gives us a general idea for length/complexity
 
 ---
 
-# [fit] Word occurrences
+# [fit] Word frequency
 
 ## __*873*__ `API`
 ## __*384*__ `objective-c`
@@ -189,6 +189,7 @@ Write, discuss, revise
 # [fit] __*10*__ Chris Lattner
 
 ^Authors or co-authors
+4 are apple, 1 non-apple!
 Erica: written as many as Doug + Joe
 *Not all accepted
 Even rejections are influential, means idea was explored
