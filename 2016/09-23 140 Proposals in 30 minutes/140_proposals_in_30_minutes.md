@@ -38,6 +38,8 @@ In other words...
 
 [^*]: *Anyone can participate!*
 
+^We want to make Swift better!
+
 ---
 
 # [fit] Make __*Swift*__ Great Again
@@ -51,7 +53,9 @@ In other words...
 
 ~2 years of Swift
 
-^It's only been 2 years! Tons of changes.
+^2 years!
+Tons of changes.
+3.0 release last week!
 
 ---
 
@@ -64,32 +68,10 @@ But *how* did that happen? 🤔
 Let's *analyze* swift-evolution proposals! 🤓
 
 ^Originally, I wanted to discuss all proposals (kind of a lightning talk)
-But, as I started writing, I had a lot of questions that I couldn't answer
-So, I wrote a bunch of scripts to analyze!
-
----
-
-# [fit] Proposal
-# [fit] metadata
-
-# [fit] _**What can we learn?**_
-
-^I'll be posting a github repo with all the code
-1. fetches all the proposals
-2. dumps them in a playground
-3. parses them -> structured data
-
----
-
-# [fit] `"It's just metadata"`
-
-# [fit] __*LOL*__
-
-![right](img/snowden.jpg)
-
-^Today, just doing some basics with metadata
-But still, some interesting things!
-In the future, we could do much more sophisticated analysis
+- But, as I started writing, I had a lot of questions that I couldn't answer.
+- All proposals public on github, but just markdown.
+- Can't query data. Ex: "give me all proposals written by chris lattner"
+- So, I wrote some code to analyze!
 
 ---
 
@@ -110,8 +92,32 @@ final class Proposal {
 }
 ```
 
-^Once fetching and parsing is complete, you end up with an array of `Proposal` structs
-^All metadata + raw file contents
+^How it works:
+1. fetches all the proposals
+2. dumps them in a playground (generates pages)
+3. processes / parses them -> structured data
+4. end up with an array of `Proposal`s
+I'll be posting a github repo with all the code
+All metadata + raw file contents
+
+---
+
+# [fit] Proposal
+# [fit] metadata
+
+# [fit] _**What can we learn?**_
+
+---
+
+# [fit] `"It's just metadata"`
+
+# [fit] __*LOL*__
+
+![right](img/snowden.jpg)
+
+^Today, just doing some basics with metadata
+But still, learn some interesting things!
+In the future, we could do much more sophisticated analysis
 
 ---
 
@@ -138,7 +144,8 @@ final class Proposal {
 # Implementation:
 # [fit] __*70%*__
 
-^Pretty interesting! 3/4 accepted!
+^Pretty interesting!
+over 3/4 accepted!
 
 ---
 
@@ -153,12 +160,20 @@ But, gives us a general idea for length/complexity
 
 ---
 
-# [fit] Word frequency
+# [fit] Word / Topic frequency
 
-## __*873*__ `API`
-## __*384*__ `objective-c`
-## __*135*__ `bridging`
-## __*6*__ `swifty`
+## [fit] __*873*__ `API`
+## [fit] __*384*__ `objective-c`
+## [fit] __*135*__ `bridging`
+## [fit] __*6*__ `swifty`
+
+*Searching the entire proposal corpus*
+
+^search entire corpus
+lots of talk about APIs (stblib + objc inter-op)
+objc mentioned almost 3 times per proposal
+will objc be mentioned this much in future? 4.0, 5.0?
+surprisingly, not much "swifty" talk
 
 ---
 
@@ -167,8 +182,6 @@ But, gives us a general idea for length/complexity
 # [fit] __*78*__
 
 ^*unique* authors
-A lot of work to push a proposal forward
-Write, discuss, revise
 
 ---
 
@@ -262,8 +275,12 @@ definitely 1000% more of something
 
 ![fit](../../img/swift-logo.png)
 
-^Joking, but this is kind of true
-Proposals for Swift 3 really define what "swifty" means!
+^Joking, kind of true
+Proposals for Swift 3:
+- define
+- refine
+- re-define
+what "swifty" means
 
 ---
 
@@ -313,7 +330,7 @@ Talking about new iPhone... or Swift 3?
 
 ![](../../img/everywhere.jpeg)
 
-^76% of all proposals were accepted for Swift 3
+^3/4 of all proposals were accepted!
 
 ---
 
@@ -325,13 +342,13 @@ Talking about new iPhone... or Swift 3?
     - "Swiftification" of imported Objective-C APIs
 - *Focus and refine language*
 - Improvements to tooling quality
-
-*(a.k.a Source Stability)*
+- Source Stability
 
 ^Evolution process didn't contribute to all goals
 It changed them!
 [goals diff](https://github.com/apple/swift-evolution/commit/06b69a6e51a71a462c268da60b51a18966dba31b)
 3.0 was about refinements, inter-op, and source stability
+Black == original goal
 
 ---
 
@@ -339,10 +356,12 @@ It changed them!
 
 - *Syntax refinements*
 - *API improvements, redesigns*
-- *Features (new, refined)*
+- *Bridging with Objective-C*
+- *Features (new or refined)*
 - *"Bug fixes"*
 
-^moving `where` clauses, func param labels, C for-loops
+^We ended up with 5 main types of proposals
+ex: moving `where` clauses, func param labels, C for-loops
 access control, property behaviors, collection indices
 
 ---
@@ -383,10 +402,10 @@ __API Design Guidelines__ ("The Great API transformation")
 // Example:
 var array = [34, 79, 12, 3, 2, 56]
 
-// sort in-place
+// sort in-place (present tense)
 array.sort()
 
-// return new, sorted array
+// return new, sorted array (past tense)
 let sorted = array.sorted()
 ```
 
@@ -404,6 +423,9 @@ public > internal > private // (to file)
 public > internal > fileprivate > private // (to scope)
 ```
 
+^similar to other languages
+familiar, but unique to swift
+
 ---
 
 # [SE-0117](https://github.com/apple/swift-evolution/blob/master/proposals/0117-non-public-subclassable-by-default.md)
@@ -417,6 +439,8 @@ public class ViewController: UIViewController { }
 // After
 open class ViewController: UIViewController { }
 ```
+
+^public = accessible, not subclass-able/override-able
 
 ---
 
@@ -451,7 +475,7 @@ myOtherDate.addTimeInterval(60) // Error (let constant)
 ```
 
 ^More natural use of foundation (var and let)
-^Big performance increases (e.g., NSDate)
+Big performance increases (e.g., NSDate)
 
 ---
 
@@ -477,7 +501,7 @@ NSOperationQueuePriority > Operation.QueuePriority
 
 # [SE-0065](https://github.com/apple/swift-evolution/blob/master/proposals/0065-collections-move-indices.md)
 __A New Model for Collections and Indices__
-*Make Collection Indices Great Again!™*
+*Make Collections and Indices Great Again!™*
 
 ```swift
 // Example:
@@ -514,21 +538,40 @@ The cost of the change you make now is forgoing the next best change you could h
 # [fit] what did we give up?
 
 ^Most of Swift 3 original goals!
-ABI, generics
-First OSS release, novelty effect, necessary evil
-But source stability is extremely important
+ABI not stable, generics not finished
+First major OSS release!
+Swift had rough edges
+novelty effect, necessary evil
 
 ---
 
 # [fit] __*Was it worth it?*__
 
-# [fit] `Source stability >> ABI stability`
-
 ![fit](../../img/swift-logo.png)
 
-^Always trades-offs
-I think source stability is far more important (at least initially)
-However, some proposals were distracting
+^Looking back, I find some proposals distracting
+"Could we be working on something more important right now?"
+But overall, yes! All was worth it!
+
+---
+
+# [fit] Yes!
+
+*Swift 3.0 is much better. (But still work to do! 💪)*
+
+*Source-stable (mostly? 🤔)*
+
+*No more expensive, painful migrations (hopefully 😁)*
+
+*Better APIs, better Objective-C inter-op 👌*
+
+*Community learned about Swift-evolution*
+
+3.0 is the new 1.0
+
+^Feels like a real 1.0
+Again, always trades-offs
+I think source stability is more important than ABI (at least initially)
 
 ---
 
