@@ -10,9 +10,9 @@ build-lists: true
 
 jessesquires.com *•* @jesse_squires *•* @swiftlybrief
 
-^Intro: SF, iOS at IG, Swift Weekly, JSQMessages
-Talk evolved a lot while writing
-Not discussing each prop, but stats + some most important
+^Intro: SF, iOS team at IG, Swift Weekly, JSQMessages
+This talk evolved a lot while writing.
+Not discussing each prop, but stats/analysis + some most important.
 
 ---
 
@@ -25,9 +25,10 @@ Not discussing each prop, but stats + some most important
 3. *Core team responsible for strategic direction*
 
 ^If you aren't familiar
-Swift-evo process represents openness of Swift
+SE process represents/embodies openness of Swift
 
 ---
+
 In other words...
 
 # [fit] Turn our[^*] __*ideas*__
@@ -110,12 +111,15 @@ final class Proposal {
 ```
 
 ^Once fetching and parsing is complete, you end up with an array of `Proposal` structs
+^All metadata + raw file contents
 
 ---
 
 # Proposals
 
 # [fit] __*140*__
+
+^Caveats: pretty small dataset
 
 ---
 
@@ -135,6 +139,8 @@ final class Proposal {
 # Implementation:
 # [fit] __*70%*__
 
+^Pretty interesting! 3/4 accepted!
+
 ---
 
 # Word Counts
@@ -152,11 +158,12 @@ But, gives us a general idea for length/complexity
 
 # [fit] __*78*__
 
-^Authors!
+^*unique* authors
 A lot of work to push a proposal forward
 Write, discuss, revise
 
 ---
+
 # [fit] __*100*__ one author
 # [fit] __*30*__ two authors
 # [fit] __*9*__ three authors
@@ -165,7 +172,7 @@ Write, discuss, revise
 
 ---
 
-# [fit] `Top Authors`
+# [fit] `Top Authors / Co-authors`
 # [fit] __*25*__ Erica Sadun
 # [fit] __*13*__ Doug Gregor
 # [fit] __*12*__ Joe Groff
@@ -174,6 +181,8 @@ Write, discuss, revise
 
 ^Authors or co-authors
 Erica: written as many as Doug + Joe
+*Not all accepted
+Even rejections are influential, means idea was explored
 
 ---
 
@@ -207,6 +216,7 @@ Erica: written as many as Doug + Joe
 
 ^Open sourced Dec 3, 2015
 Released March 21, 2016
+First open-source release
 **3-4 months of dev**
 
 ---
@@ -219,6 +229,7 @@ Released March 21, 2016
 
 ^From March 2016 to Sept 2016
 **5-6 months of dev**
+8 to 89!
 
 ---
 
@@ -252,7 +263,7 @@ Proposals for Swift 3 really define what "swifty" means!
 
 - Stable ABI (Application Binary Interface)
 - Resilience
-- Portability
+- Portability (Linux)
 - Type system cleanup and docs
 - Complete generics
 - Focus and refine language
@@ -261,6 +272,8 @@ Proposals for Swift 3 really define what "swifty" means!
 ---
 
 # [fit] What actually happened?
+
+^tons of proposals!
 
 ---
 
@@ -292,7 +305,7 @@ Talking about new iPhone... or Swift 3?
 
 ![](../../img/everywhere.jpeg)
 
-^75% of all proposals were accepted for Swift 3
+^76% of all proposals were accepted for Swift 3
 
 ---
 
@@ -301,7 +314,7 @@ Talking about new iPhone... or Swift 3?
 - *API design guidelines*
     - Automatic application of naming guidelines to imported Objective-C APIs
     - Adoption of naming guidelines in key APIs
-    - Swiftification of imported Objective-C APIs
+    - "Swiftification" of imported Objective-C APIs
 - *Focus and refine language*
 - Improvements to tooling quality
 
@@ -310,6 +323,7 @@ Talking about new iPhone... or Swift 3?
 ^Evolution process didn't contribute to all goals
 It changed them!
 [goals diff](https://github.com/apple/swift-evolution/commit/06b69a6e51a71a462c268da60b51a18966dba31b)
+3.0 was about refinements, inter-op, and source stability
 
 ---
 
@@ -320,11 +334,13 @@ It changed them!
 - *Features (new, refined)*
 - *"Bug fixes"*
 
+^moving `where` clauses, func param labels, C for-loops
+access control, property behaviors, collection indices
+
 ---
 
-# [fit] VIP's
-
 # [fit] __*very important proposals*__
+# [fit] VIP's
 
 ---
 
@@ -333,6 +349,9 @@ __Better Translation of Objective-C APIs Into Swift__
 *Make Cocoa/Objective-C APIs Great Again!™*
 
 ```swift
+// Example:
+let text = "Hello, FrenchKit! 🇫🇷"
+
 // Before
 let content = text.stringByTrimmingCharactersInSet(
             NSCharacterSet.whitespaceAndNewlineCharacterSet())
@@ -343,7 +362,8 @@ let content = text.trimming(.whitespaceAndNewlines)
 ```
 
 ^Refine how Cocoa/Objective-C APIs are imported
-^Remove redundancy. Verbosity != clarity
+Remove redundancy. Verbosity != clarity
+Basically affects all of your code
 
 ---
 
@@ -452,7 +472,9 @@ __A New Model for Collections and Indices__
 *Make Collection Indices Great Again!™*
 
 ```swift
-var index = c.index(where: { /* condition */ })
+// Example:
+let collection = /* some collection */
+var index = collection.index(where: { /* condition */ })
 
 // Before
 index.successor()
@@ -462,20 +484,9 @@ collection.index(after: index)
 ```
 
 ^complete rewrite
-^index traversal moved from index to collection
-^huge perf benefits (index doesn't have to know about collection)
-^big impact if you have custom collections
-
----
-
-# TODO:
-
-select a couple more proposals to discuss?
-
-- SE-0072, Fully eliminate implicit bridging conversions from Swift
-
-- SE-0062, Referencing Objective-C key-paths
-- SE-0064, Referencing the Objective-C selector of property getters and setters
+index traversal moved from index to collection
+perf benefits (index doesn't have to know about collection)
+big impact if you have custom collections
 
 ---
 
@@ -485,16 +496,19 @@ select a couple more proposals to discuss?
 
 ![](img/erlich-money.gif)
 
+^Every change in software is a trade-off
+The cost of the change you make now is forgoing the next best change you could have made
+
 ---
 
 # [fit] __*Opportunity*__
 # [fit] __*Cost*__
 # [fit] what did we give up?
 
-^Most of Swift 3's original goals!
-^ABI, generics
-^First OSS release, novelty effect, necessary evil
-^But source stability is extremely important
+^Most of Swift 3 original goals!
+ABI, generics
+First OSS release, novelty effect, necessary evil
+But source stability is extremely important
 
 ---
 
@@ -502,9 +516,11 @@ select a couple more proposals to discuss?
 
 # [fit] `Source stability >> ABI stability`
 
+![fit](../../img/swift-logo.png)
+
 ^Always trades-offs
-^I think source stability is far more important (at least initially)
-^However, some proposals were distracting
+I think source stability is far more important (at least initially)
+However, some proposals were distracting
 
 ---
 
