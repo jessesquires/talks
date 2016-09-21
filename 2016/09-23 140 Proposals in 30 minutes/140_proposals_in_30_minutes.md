@@ -95,11 +95,12 @@ In the future, we could do much more sophisticated analysis
 ```swift
 // swift-proposal-analyzer.playground
 
-struct Proposal {
-    let title: String
-    let seNumber: String    // e.g., SE-0001
+final class Proposal {
 
-    let authors: [String]
+    let title: String
+    let seNumber: String    // SE-0001, SE-0002, etc.
+
+    let authors: [Author]
     let status: Status      // .inReview, .accepted, etc.
 
     let fileName: String
@@ -463,6 +464,7 @@ collection.index(after: index)
 ^complete rewrite
 ^index traversal moved from index to collection
 ^huge perf benefits (index doesn't have to know about collection)
+^big impact if you have custom collections
 
 ---
 
