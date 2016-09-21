@@ -124,18 +124,17 @@ final class Proposal {
 ---
 
 # [fit] __*98*__ implemented
-# [fit] __*9*__ accepted[^1]
+# [fit] __*10*__ accepted[^1]
 # [fit] __*10*__ deferred
-# [fit] __*19*__ Rejected
-# [fit] __*3*__ Withdrawn
-# [fit] 1 __*in review*__
+# [fit] __*19*__ rejected
+# [fit] __*3*__ withdrawn
 
 [^1]: But not yet implemented
 
 ---
 
 # Acceptance:
-# [fit] __*76%*__
+# [fit] __*77%*__
 # Implementation:
 # [fit] __*70%*__
 
@@ -188,8 +187,7 @@ Write, discuss, revise
 # [fit] __*10*__ Dave Abrahams
 # [fit] __*10*__ Chris Lattner
 
-^Authors or co-authors
-4 are apple, 1 non-apple!
+^4 are apple, 1 non-apple!
 Erica: written as many as Doug + Joe
 *Not all accepted
 Even rejections are influential, means idea was explored
