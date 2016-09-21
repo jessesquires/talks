@@ -154,6 +154,15 @@ But, gives us a general idea for length/complexity
 
 ---
 
+# [fit] Word occurrences
+
+## __*873*__ `API`
+## __*384*__ `objective-c`
+## __*135*__ `bridging`
+## __*6*__ `swifty`
+
+---
+
 # Authors
 
 # [fit] __*78*__
