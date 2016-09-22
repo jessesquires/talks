@@ -24,8 +24,10 @@ Not discussing each prop, but stats/analysis + some most important.
 2. *Maintain vision and conceptual coherence*
 3. *Core team responsible for strategic direction*
 
-^If you aren't familiar
-SE process represents/embodies openness of Swift
+^If you aren't familiar:
+SE process represents/embodies openness of Swift.
+Core team != App developers.
+They need our feedback to make swift better.
 
 ---
 
@@ -273,30 +275,30 @@ definitely 1000% more of something
 
 *1012% more swifty™*
 
+*Proposals define and refine what "swifty" means.*
+
 ![fit](../../img/swift-logo.png)
 
 ^Joking, kind of true
-Proposals for Swift 3:
-- define
-- refine
-- re-define
-what "swifty" means
 
 ---
 
 # __*Original Goals*__
 
 - Stable ABI (Application Binary Interface)
-- Resilience
+- Resilience (Fragile binary interface problem)
 - Portability (Linux)
 - Type system cleanup and docs
 - Complete generics
 - Focus and refine language
 - API design guidelines
 
+^ABI: Finalizes runtime data structures, calling conventions, etc. Future code can interact with older binaries
+Resilience: "fragile base class". additive change to superclass should not require recompile for subclass
+
 ---
 
-# [fit] What actually happened?
+# [fit] What actually happened? 🤔
 
 ^tons of proposals!
 
@@ -324,13 +326,28 @@ Talking about new iPhone... or Swift 3?
 <br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br>
 
-*__Overwhelming__ community participation!*
+*__Overwhelming__ community participation and feedback!*
 
 # [fit] _Proposals **everywhere**_
 
 ![](../../img/everywhere.jpeg)
 
 ^3/4 of all proposals were accepted!
+
+---
+
+# [fit] __*5*__ Types of proposals
+
+- *Syntax refinements*
+- *API improvements, redesigns*
+- *Bridging with Objective-C*
+- *Features (new or refined)*
+- *"Bug fixes"*
+
+^We ended up with 5 main types of proposals (common themes)
+ex: moving `where` clauses, func param labels, C for-loops
+access control, property behaviors, collection indices
+SE-37: inline comment next to an operator is parsed incorrectly
 
 ---
 
@@ -348,21 +365,7 @@ Talking about new iPhone... or Swift 3?
 It changed them!
 [goals diff](https://github.com/apple/swift-evolution/commit/06b69a6e51a71a462c268da60b51a18966dba31b)
 3.0 was about refinements, inter-op, and source stability
-Black == original goal
-
----
-
-# [fit] Types of proposals
-
-- *Syntax refinements*
-- *API improvements, redesigns*
-- *Bridging with Objective-C*
-- *Features (new or refined)*
-- *"Bug fixes"*
-
-^We ended up with 5 main types of proposals
-ex: moving `where` clauses, func param labels, C for-loops
-access control, property behaviors, collection indices
+Black text == original goal
 
 ---
 
@@ -479,26 +482,6 @@ Big performance increases (e.g., NSDate)
 
 ---
 
-# [SE-0086](https://github.com/apple/swift-evolution/blob/master/proposals/0086-drop-foundation-ns.md)
-__Drop NS Prefix in Swift Foundation__
-*Make Prefixes Great Again!™*
-
-```swift
-// Examples:
-
-NSDate > Date
-
-NSURLSession > URLSession
-
-NSCalendarUnit > Calendar.Unit
-
-NSOperationQueuePriority > Operation.QueuePriority
-```
-
-^Rename types, hoisted types
-
----
-
 # [SE-0065](https://github.com/apple/swift-evolution/blob/master/proposals/0065-collections-move-indices.md)
 __A New Model for Collections and Indices__
 *Make Collections and Indices Great Again!™*
@@ -522,6 +505,28 @@ big impact if you have custom collections
 
 ---
 
+# [SE-0116](https://github.com/apple/swift-evolution/blob/master/proposals/0116-id-as-any.md)
+__Import Objective-C `id` as Swift `Any` type__
+*Make Polymorphic Obj-C Interfaces Great Again!™*
+
+```objc
+// Objective-C lol
+- (BOOL)isEqual:(id)object;
+```
+
+```swift
+// Before
+func isEqual(_ object: AnyObject?) -> Bool
+
+// After
+func isEqual(_ object: Any?) -> Bool
+```
+
+^ObjC interfaces defined as `id`. This becomes `AnyObject` which doesn't work naturally with value types.
+Interacting with Objective-C no longer imposes using reference types
+
+---
+
 # [fit] The cost of Swift Evolution
 
 <br>
@@ -537,11 +542,14 @@ The cost of the change you make now is forgoing the next best change you could h
 # [fit] __*Cost*__
 # [fit] what did we give up?
 
-^Most of Swift 3 original goals!
-ABI not stable, generics not finished
-First major OSS release!
-Swift had rough edges
-novelty effect, necessary evil
+^Implicit in "what did we gain?" is "what did we give up?"
+- Most of Swift 3 original goals!
+- ABI not stable
+- generics not finished
+- First major OSS release!
+- Swift had rough edges
+- novelty effect
+- necessary evil
 
 ---
 
@@ -557,7 +565,7 @@ But overall, yes! All was worth it!
 
 # [fit] Yes!
 
-*Swift 3.0 is much better. (But still work to do! 💪)*
+*Swift 3.0 is much better (but still work to do! 💪)*
 
 *Source-stable (mostly? 🤔)*
 
@@ -565,9 +573,7 @@ But overall, yes! All was worth it!
 
 *Better APIs, better Objective-C inter-op 👌*
 
-*Community learned about Swift-evolution*
-
-3.0 is the new 1.0
+*Community learned about Swift-evolution process 🤓*
 
 ^Feels like a real 1.0
 Again, always trades-offs
@@ -584,6 +590,7 @@ I think source stability is more important than ABI (at least initially)
 # [fit] Resources
 
 Me:
+*@jesse_squires*
 _jessesquires.com_
 _github.com/jessesquires/swift-proposal-analyzer_
 
@@ -591,6 +598,5 @@ Swift Weekly Brief:
 _swiftweekly.github.io_
 _@swiftlybrief_
 
-Apple:
-_swift.org_
+swift-evolution:
 _github.com/apple/swift-evolution_
