@@ -4,6 +4,7 @@
 
 | Date          | Title                             | Event                           | Location                             | Links                              |
 |:--------------|:----------------------------------|:--------------------------------|:-------------------------------------|:-----------------------------------|
+| 23 Sep 2016   | 140 proposals in 30 minutes       | [FrenchKit][event6]             | [Pan Piper][location6], Paris :fr:   | [slides][slides6]                  |
 | 28 Jul 2016   | Keynote Panel                     | [Forward Swift][event5]         | [Regency Ballroom][location5], SF    | [video][video5]                    |
 | 13 Jun 2016   | WWDC Swift Live Panel, take 2     | [WWDC Swift Panel][event4]      | [Realm][location4], San Francisco    | [video][video4]                    |
 | 04 Mar 2016   | Contributing to open source Swift | [try! Swift conference][event3] | [Cyber Agent][location3], Tokyo :jp: | [slides][slides3], [video][video3] |
@@ -14,18 +15,17 @@
 
 | Date          | Event                       | Location                             |
 |:--------------|:----------------------------|:-------------------------------------|
-| 23 Sep 2016   | [FrenchKit][event6]         | Paris :fr:                           |
 | 07 Nov 2016   | [Swift Summit][event7]      | San Francisco                        |
 
 > <a href="mailto:jesse@jessesquires.com">Contact me</a> about speaking engagements.
 
-## About
+# About
 
 All presentations are created using [Deckset](http://www.decksetapp.com) or [Keynote](https://www.apple.com/mac/keynote/), and uploaded to [Speaker Deck](https://speakerdeck.com/jessesquires). 
 
 The original `.md` or `.key` files for slides, speaker notes, and resources are all included in this repo.
 
-## License
+# License
 
 >**Copyright &copy; 2015-present Jesse Squires**
 
@@ -57,5 +57,7 @@ The original `.md` or `.key` files for slides, speaker notes, and resources are 
 [video5]:https://forwardcourses.com/lectures/178
 
 [event6]:http://frenchkit.fr
+[location6]:http://www.pan-piper.com/en/
+[slides6]:https://speakerdeck.com/jessesquires/140-proposals-in-30-minutes
 
 [event7]:https://swiftsummit.com/
