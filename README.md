@@ -2,7 +2,7 @@
 
 *A list of talks that I've given*
 
-| Date          | Title                             | Event                           | Location                             | Links                                             |
+| :date: Date   | :black_nib: Title                 | :movie_camera: Event            | :round_pushpin: Location             | :paperclip: Links                                 |
 |:--------------|:----------------------------------|:--------------------------------|:-------------------------------------|:--------------------------------------------------|
 | 23 Sep 2016   | 140 proposals in 30 minutes       | [FrenchKit][event6]             | [Pan Piper][location6], Paris :fr:   | [slides][slides6], [code][code6]                  |
 | 28 Jul 2016   | Keynote Panel                     | [Forward Swift][event5]         | [Regency Ballroom][location5], SF    | [video][video5]                                   |
