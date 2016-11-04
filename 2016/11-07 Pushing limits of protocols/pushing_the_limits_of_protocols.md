@@ -17,8 +17,9 @@ slidenumbers: false
 
 Every language has its own *personality* and *paradigms*
 
-- `Protocols`
-- `Value types`
+- Protocols (and extensions)
+- Value types
+- First-class Functions
 
 ---
 
@@ -40,7 +41,7 @@ Every language has its own *personality* and *paradigms*
 ---
 
 # [fit] SOLID
-# [fit] Engineering Principles
+# [fit] Design Principles
 
 ^Who's heard of solid?
 - Set of principles for designing "good" software modules
@@ -57,7 +58,110 @@ Every language has its own *personality* and *paradigms*
 
 ---
 
-Brief Example
+# Brief Example
+
+![](../../img/cook-shrug.jpg)
+
+---
+
+```swift
+struct Programmer {
+
+    func code(task: GitHubIssue)
+
+    func eat(food: Food)
+
+    func drink(beverage: Beverage)
+
+    func sleep(bed: Bed) // lol
+
+    func 💩(🚽: 🚽)
+}
+
+```
+
+---
+
+```swift
+struct Restaurant {
+
+    func feed(programmer: Programmer) {
+        let 🌮 = Taco()
+        programmer.eat(food: 🌮)
+
+        let 🍵 = Tea()
+        programmer.drink(beverage: 🍵)
+
+        // can call any method on programmer!
+    }
+}
+```
+
+---
+
+# __*It works,*__
+# __*however...*__
+# `Restaurant`
+# [fit] __*can call any function on*__
+# `Programmer`
+
+---
+
+```swift
+struct Restaurant {
+
+    func feed(programmer: Programmer) {
+        let 🔥 = Issue()
+        programmer.code(task: 🔥) // wat? y u no
+
+        // supposed to call programmer.feed(food:)
+    }
+}
+```
+
+---
+
+# protocols
+
+```swift
+protocol Feedable {
+
+    func eat(food: Food)
+
+    func drink(beverage: Beverage)
+}
+```
+
+---
+
+```swift
+extension Programmer: Feedable { }
+
+struct Restaurant {
+
+    func feed(_ feedable: Feedable) {
+        let 🌮 = Taco()
+        feedable.eat(food: 🌮)
+
+        let 🍵 = Tea()
+        feedable.drink(beverage: 🍵)
+    }
+}
+
+// Usage:
+let 🤓 = Programmer()
+restaurant.feed(🤓)
+```
+
+---
+
+Protocols restrict access through interfaces
+
+- small
+- focused
+- separated
+
+![](img/heo.jpg)
 
 ---
 
@@ -108,11 +212,11 @@ Brief Example
 3. *use value types* (where possible)
 4. *remove UIKit boilerplate*
 5. __*unify*__ `UITableView` and `UICollectionView`
-6. *avoid* `NSObject` and `NSObjectProtocol`
+6. *avoid* `NSObject` and `NSObjectProtocol` ("pure" Swift)
 
 ---
 
-# Responsibility
+# Responsibilities
 
 *Display data in a list or grid.*
 
@@ -120,6 +224,52 @@ What do we need?
 
 1. Structured data (sections with items/rows)
 2. Produce and configure cells
+
+---
+
+# 1. Section
+
+```swift
+protocol SectionInfoProtocol {
+    associatedtype Item
+
+    var items: [Item] { get set }
+
+    var headerTitle: String? { get }
+    var footerTitle: String? { get }
+}
+```
+
+---
+
+# 2. DataSource
+
+```swift
+protocol DataSourceProtocol {
+    associatedtype Item
+
+    func numberOfSections() -> Int
+    func numberOfItems(inSection section: Int) -> Int
+
+    func items(inSection section: Int) -> [Item]?
+
+    func item(atRow row: Int, inSection section: Int) -> Item?
+
+    func headerTitle(inSection section: Int) -> String?
+    func footerTitle(inSection section: Int) -> String?
+}
+
+```
+
+---
+
+# 3. Producing cells
+
+Need a common interface for:
+
+- *Table cells*
+- *Collection cells*
+- *Collection supplementary views*
 
 ---
 
