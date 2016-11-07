@@ -23,8 +23,8 @@ Every language has its own *personality* and *paradigms*
 - Value types
 - First-class Functions
 
-^Like all languages, Swift has it's own feel and personality
-This is mostly expressed via these 3 things
+^Swift has it's own feel and personality
+Swift expresses it's personality in a few ways
 
 ---
 
@@ -40,8 +40,8 @@ This is mostly expressed via these 3 things
 # [fit] programming?
 
 ^The hip new term that the Swift team has been saying
-- But! Not really new :)
-- Old concept
+- Not a new idea!
+- Old concept!
 
 ---
 
@@ -49,7 +49,9 @@ This is mostly expressed via these 3 things
 # [fit] Design Principles
 
 ^Who's heard of solid?
+- Acronym
 - Set of principles for designing "good" software modules
+- Guidelines to make code modular and easy to change
 
 ---
 
@@ -61,6 +63,9 @@ This is mostly expressed via these 3 things
 # [fit] "Protocol-oriented"
 # [fit] Programming is the
 # [fit] __*Interface Segregation Principle*__
+
+^POP embodies this principle
+Writing protocol-oriented code means implementing the interface segregation principle
 
 ---
 
@@ -83,6 +88,11 @@ The "I" in SOLID:
 - Unify disjoint types (no common ancestor)
 - Hide concrete type information
 
+^- think breaking up tableViewDelegate
+- only access what's in the protocol
+- treat different types the same way
+- encapsulate the actual type
+
 ---
 
 # Why?
@@ -90,6 +100,10 @@ The "I" in SOLID:
 Why do we want to use protocols?
 
 ![](img/heo.jpg)
+
+^Protocols introduce more complexity (seemingly)
+- More abstract
+- What the motivation?
 
 ---
 
@@ -102,10 +116,10 @@ Why do we want to use protocols?
 
 ![fit](../../img/freddie.png)
 
-^- Safe: similar to generics, Type T, Protocol P
-- Dynamic: can be any type
-- Modular: underlying types can change, consumers don't
+^- Modular: underlying types can change, consumers don't
+- Dynamic: any type, resolved at runtime, extensions with constraints
 - Testable: easy to mock/fake
+- Safe: similar to generics, Type T, Protocol P
 
 ---
 
@@ -113,6 +127,8 @@ Why do we want to use protocols?
 # [fit] were a `protocol`?
 
 *(well, almost)*
+
+Let's find out!
 
 ![](../../img/skeptical_baby.jpg)
 
@@ -123,14 +139,16 @@ Why do we want to use protocols?
 # protocol-oriented
 # data sources
 
-- `UITableViewDataSource`
-- `UICollectionViewDataSource`
+— `UITableViewDataSource`
+— `UICollectionViewDataSource`
 
 *Table views and collection views are fundamental components of most apps.*
 
-^I know there are many takes on this.
-- This is not an attempt to persuade you.
-- This is an exercise in POP to see what we can learn.
+^- An exercise to see what we can learn!
+- Lot's of code
+- Very brief snippets
+- Omitting details to focus on ideas
+- Keep slides readable/understandable
 
 ---
 
@@ -244,27 +262,16 @@ struct DataSource<S: SectionInfoProtocol>: DataSourceProtocol {
 
 ---
 
-# Create and configure cells
+# Create + configure cells
 
-We need a common interface (protocol) for:
+1) We need a common interface (protocol) for:
 
-- *Tables & collections*
-- *Table cells*
-- *Collection cells*
-- *Collection supplementary views*
+— *Tables & collections*
+— *Table cells*
+— *Collection cells*
+— *Collection supplementary views*
 
----
-
-How can we unify
-tables and collections?
-
-![](../../img/thinking.jpg)
-
----
-
-# [fit] Protocols
-
-![fit right](../../img/freddie.png)
+2) We need a __unified__ way to create and configure them
 
 ---
 
@@ -287,7 +294,6 @@ protocol CellParentViewProtocol {
 ```
 
 ^Both need to dequeue cells
-^Tables will return `nil` for suppl. views
 
 ---
 
@@ -314,6 +320,8 @@ extension UICollectionView: CellParentViewProtocol {
     }
 }
 ```
+
+^Tables will return `nil` for suppl. views
 
 ---
 
@@ -381,7 +389,14 @@ __ReusableViewProtocol__
 
 ---
 
-# Creating cells __*Protocol*__
+# Create + configure cells
+
+✅ A common interface
+2. A __unified__ way to create and configure
+
+---
+
+# [fit] Create + configure cells __*Protocol*__
 
 ```swift
 // Configure a cell with a model
@@ -415,6 +430,7 @@ extension ReusableViewFactoryProtocol where View: UITableViewCell {
 
         let cellId = reuseIdentiferFor(item: item, type: .cell, indexPath: indexPath)
 
+        // CellParentViewProtocol
         let cell = tableView.dequeueReusableCellFor(identifier: cellId,
                                                     indexPath: indexPath) as! View
 
@@ -428,6 +444,8 @@ extension ReusableViewFactoryProtocol where View: UITableViewCell {
 
 ```
 
+^- Extension only available for table view/cells
+
 ---
 
 # [fit] Protocol extension for collections
@@ -440,6 +458,7 @@ extension ReusableViewFactoryProtocol where View: UICollectionViewCell {
                            indexPath: IndexPath) -> View {
         let cellId = reuseIdentiferFor(item: item, type: .cell, indexPath: indexPath)
 
+        // CellParentViewProtocol
         let cell = collectionView.dequeueReusableCellFor(identifier: cellId,
                                                          indexPath: indexPath) as! View
 
@@ -452,9 +471,11 @@ extension ReusableViewFactoryProtocol where View: UICollectionViewCell {
 }
 ```
 
+^- Extension only available for collection view/cells
+
 ---
 
-# Creating cells __*Type*__
+# Create + configure cells __*Type*__
 
 ```swift
 struct ViewFactory<Item, Cell: ReusableViewProtocol>: ReusableViewFactoryProtocol  {
@@ -476,6 +497,10 @@ struct ViewFactory<Item, Cell: ReusableViewProtocol>: ReusableViewFactoryProtoco
                    indexPath: IndexPath) -> View
 }
 ```
+
+^-Specific type in create cells
+- 1st function just returns reuse id
+- 2nd function returns result of the closure
 
 ---
 
@@ -584,7 +609,7 @@ class DataSourceProvider<D: DataSourceProtocol,
 ```swift
 let dataSource = DataSource(sections: /* sections of models */)
 
-let config: ConfigClosure = { (cell, model, type, view, index) -> MyCell in
+let config: ConfigClosure = { (cell, model, type, view, indexPath) -> MyCell in
     // configure cell with model
     return cell
 }
@@ -600,18 +625,30 @@ collectionView.dataSource = provider.collectionViewDataSource
 tableView.dataSource = provider.tableViewDataSource
 ```
 
+^- cell factory will use the extension methods that we wrote to create table/collection cells
+
 ---
 
-# How does that work?
+# [fit] How does that work?
 
-![](../../img/jackie.jpg)
+![right](../../img/jackie.jpg)
+
+```swift
+// Collections
+provider.collectionViewDataSource
+
+// Tables
+provider.tableViewDataSource
+```
 
 ---
 
 # Generating specific data sources
 
 ```swift
-extension DataSourceProvider where CellFactory.View: UITableViewCell {
+// class DataSourceProvider<D,C,S>
+
+extension DataSourceProvider where C.View: UITableViewCell {
 
     public var tableViewDataSource: UITableViewDataSource {
         if bridgedDataSource == nil {
@@ -632,31 +669,33 @@ extension DataSourceProvider where CellFactory.View: UITableViewCell {
 # Generating specific data sources
 
 ```swift
-extension DataSourceProvider where CellFactory.View: UITableViewCell {
+// extension DataSourceProvider where C.View: UITableViewCell
 
-    func createTableViewDataSource() -> BridgedDataSource {
-        let source = BridgedDataSource()
+func createTableViewDataSource() -> BridgedDataSource {
+    let source = BridgedDataSource()
 
-        source.numberOfSections = { () -> Int in
-            return self.dataSource.numberOfSections()
-        }
-
-        source.numberOfItemsInSection = { (section) -> Int in
-            return self.dataSource.numberOfItems(inSection: section)
-        }
-
-        source.tableCellForRowAtIndexPath = { (tableView, indexPath) -> UITableViewCell in
-            let item = self.dataSource.item(at: indexPath)
-
-            return self.cellFactory.tableCellFor(item: item,
-                                                 tableView: tableView,
-                                                 indexPath: indexPath)
-        }
-
-        // continued...
+    source.numberOfSections = { () -> Int in
+        return self.dataSource.numberOfSections()
     }
+
+    source.numberOfItemsInSection = { (section) -> Int in
+        return self.dataSource.numberOfItems(inSection: section)
+    }
+
+    source.tableCellForRowAtIndexPath = { (tableView, indexPath) -> UITableViewCell in
+        let item = self.dataSource.item(at: indexPath)
+
+        // extension method on ReusableViewFactoryProtocol
+        return self.cellFactory.tableCellFor(item: item,
+                                             tableView: tableView,
+                                             indexPath: indexPath)
+    }
+
+    // continued...
 }
 ```
+
+^- Collection view follows similarly
 
 ---
 
@@ -685,18 +724,21 @@ Returns __BridgedDataSource__ but clients don't know!
 # Dynamic interface segregation
 
 ```swift
-extension DataSourceProvider where CellFactory.View: UITableViewCell {
+// Creates + configures table cells
+extension DataSourceProvider where C.View: UITableViewCell {
     var tableViewDataSource: UITableViewDataSource
 }
 
-extension DataSourceProvider where CellFactory.View: UICollectionViewCell {
+// Creates + configures collection cells
+extension DataSourceProvider where C.View: UICollectionViewCell {
     var collectionViewDataSource: UICollectionViewDataSource
 }
 ```
 
 You __cannot__ access *tableViewDataSource* if you are creating *UICollectionViewCells*!
 
-![](https://johnforbis.files.wordpress.com/2015/05/fork-in-the-road.jpg)
+^- Mutually exclusive
+- Enforced by compiler
 
 ---
 
@@ -735,7 +777,25 @@ protocol ReusableViewFactoryProtocol { }
 ---
 
 # __*Protocols*__
-# Testable code!
+# Type safe
+
+*Using constraints and associated types*
+
+```swift
+class DataSourceProvider<D: DataSourceProtocol,
+                         C: ReusableViewFactoryProtocol,
+                         S: ReusableViewFactoryProtocol>
+      where C.Item == D.Item,
+            S.Item == D.Item {
+}
+```
+
+^Let the compiler do a lot of work for us
+
+---
+
+# __*Protocols*__
+# Testable
 
 It's very easy to "mock" or fake
 a __protocol__ in a unit test.
