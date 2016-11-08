@@ -1,3 +1,7 @@
+theme: Poster, 6
+autoscale: true
+build-lists: true
+slidenumbers: false
 
 # [fit] Swifty view controller presenters
 

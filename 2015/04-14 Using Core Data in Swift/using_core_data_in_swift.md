@@ -1,3 +1,8 @@
+theme: Poster, 1
+autoscale: true
+build-lists: true
+slidenumbers: false
+
 <br/>
 
 # [fit] Using Core Data in Swift
