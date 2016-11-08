@@ -4,6 +4,7 @@
 
 | :date: Date   | :black_nib: Title                 | :movie_camera: Event            | :round_pushpin: Location             | :paperclip: Links                                 |
 |:--------------|:----------------------------------|:--------------------------------|:-------------------------------------|:--------------------------------------------------|
+| 08 Nov 2016   | Pushing the limits of POP         | [Swift Summit][event7]          | [Palace of Fine Arts][location7], SF | [slides][slides7], [code][code7]                  |
 | 23 Sep 2016   | 140 proposals in 30 minutes       | [FrenchKit][event6]             | [Pan Piper][location6], Paris :fr:   | [slides][slides6], [video][video6], [code][code6] |
 | 28 Jul 2016   | Keynote Panel                     | [Forward Swift][event5]         | [Regency Ballroom][location5], SF    | [video][video5]                                   |
 | 13 Jun 2016   | WWDC Swift Live Panel, take 2     | [WWDC Swift Panel][event4]      | [Realm][location4], San Francisco    | [video][video4]                                   |
@@ -13,9 +14,9 @@
 
 # Upcoming
 
-| Date          | Event                       | Location                             |
-|:--------------|:----------------------------|:-------------------------------------|
-| 07 Nov 2016   | [Swift Summit][event7]      | San Francisco                        |
+| Date          | Event                       | Location                 |
+|:--------------|:----------------------------|:-------------------------|
+| TBA           | TBA                         | TBA                      |
 
 > <a href="mailto:jesse@jessesquires.com">Contact me</a> about speaking engagements.
 
@@ -65,3 +66,6 @@ The original `.md` or `.key` files for slides, speaker notes, and resources are 
 [code6]:https://github.com/jessesquires/swift-proposal-analyzer
 
 [event7]:https://swiftsummit.com/
+[location7]:https://palaceoffinearts.org
+[slides7]:https://speakerdeck.com/jessesquires/pushing-the-limits-of-protocol-oriented-programming
+[code7]:https://github.com/jessesquires/JSQDataSourcesKit
