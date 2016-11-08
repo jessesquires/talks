@@ -94,11 +94,11 @@ The "I" in SOLID:
 - Restrict access
 - Unify disjoint types
 - Hide concrete types
-- Flexibility
 
 ^- think breaking up tableViewDelegate
 - only access what's in the protocol
 - treat different types the same way (no common ancestor)
+- remove if-else
 - encapsulate the actual type
 
 ---
