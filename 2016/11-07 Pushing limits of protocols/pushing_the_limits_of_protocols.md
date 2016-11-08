@@ -807,6 +807,16 @@ a __protocol__ method was called.
 
 ---
 
+# [fit] Protocols + Extensions
+# [fit] __*expand our*__
+# [fit] design space
+
+^- can express things that were impossible in ObjC
+- define minimum functionality in protocol
+- get tons of rich behavior for free in extensions
+
+---
+
 # [fit] Thanks!
 
 *Me:*
