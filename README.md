@@ -2,7 +2,7 @@
 
 *Slides and materials for talks that I've given*
 
-Visit [jessesquires.com/speaking](http://www.jessesquires.com/speaking/) for the complete list of talks that I've given and additional details.
+> Visit [jessesquires.com/speaking](http://www.jessesquires.com/speaking/) for the complete list of talks that I've given and additional details.
 
 # About
 
