@@ -46,8 +46,6 @@ In other words...
 
 # [fit] Make __*Swift*__ Great Again
 
-![](img/drumpf.jpg)
-
 ---
 
 # [fit] Swift
