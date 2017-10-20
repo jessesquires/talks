@@ -1254,7 +1254,9 @@ More than 1 ulp -> 😭
 <br><br><br><br><br><br>
 <br><br><br><br><br><br>
 
-The Swift Standard Library provides great APIs for exploring the layout and implementation of numeric types. Open a Playground and try it out!
+The Swift Standard Library provides great APIs for exploring the layout and implementation of numeric types.
+
+Open a Playground and try it out!
 
 ---
 
