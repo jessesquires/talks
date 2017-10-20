@@ -1,4 +1,4 @@
-theme: Letters From Sweden, 5
+theme: Letters From Sweden, 4
 autoscale: true
 build-lists: true
 slidenumbers: false
