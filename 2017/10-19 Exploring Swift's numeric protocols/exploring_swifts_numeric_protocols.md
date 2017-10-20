@@ -850,7 +850,7 @@ Float.significandBitCount   // 23 bits
 <br><br><br><br><br><br><br><br><br>
 
 # **Interesting properties**
-# of floating-point values
+# of floating-point layout
 
 ![](http://www.bobsearch.com/wp-content/uploads/2012/02/office-space-top-management1.jpg)
 
