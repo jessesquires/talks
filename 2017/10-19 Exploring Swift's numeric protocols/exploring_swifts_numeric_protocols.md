@@ -1217,7 +1217,7 @@ Some edge cases to handle (e.g., negatives, which are two's complement)
 
 ---
 
-# Computing relative ULPs
+# **Comparing** relative ULPs
 
 ```swift
 let f1 = Float(1_000_000.0)
@@ -1227,10 +1227,21 @@ let f2 = f1 + (f1.ulp * 5) // 1_000_000.31250
 abs(f1.asInt32 - f2.asInt32) // 5 ULPs away
 ```
 
-## `If <= 1 ulp, consider equal`
+![original](img/compare-ulps.png)
 
 ^5 "units in the last place"
-If 0 ulps, then they are equal!
+
+---
+
+# **Comparing** relative ULPs
+
+- If **zero**, floats are exact same binary representation
+- If **one**, floats are as close as possible without being equal
+- If **more than one**, floats (potentially) differ by orders of magnitude
+
+## [fit] `If <= 1 ulp, consider them equal`
+
+^If 0 ulps, then they are equal!
 If 1 ulp difference, then as close as they can possibly be without being equal
 More than 1 ulp -> 😭
 
@@ -1239,6 +1250,11 @@ More than 1 ulp -> 😭
 # [fit] Precision is hard. **Equality is harder.**
 
 ![](http://www.purple-twinkie.com/images/office-space/b9919001.jpg)
+
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+
+The Swift Standard Library provides great APIs for exploring the layout and implementation of numeric types. Open a Playground and try it out!
 
 ---
 
